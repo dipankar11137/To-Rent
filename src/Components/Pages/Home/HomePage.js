@@ -1,8 +1,15 @@
 import React, { useState } from 'react';
+import {
+  FaBlind,
+  FaHeading,
+  FaHome,
+  FaUniversity,
+  FaUserFriends,
+} from 'react-icons/fa';
+import { MdOutlineFamilyRestroom } from 'react-icons/md';
 
 const HomePage = () => {
   const [category, setCategory] = useState('');
-  const catas = ['Family', ' Bachelor', 'Sublet', 'office'];
   return (
     <div className="mx-20 shadow-red-500 shadow-r-lg">
       <div className="grid grid-cols-12">
@@ -11,61 +18,105 @@ const HomePage = () => {
             onClick={() => setCategory('Home')}
             className={
               category === 'Home'
-                ? ' text-primary  font-semibold text-2xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 mt-2'
-                : ' font-semibold text-2xl cursor-pointer mt-2 mt-2'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
-            Home
+            <FaHome className="mr-3" /> Home
           </h1>
           <h1
             onClick={() => setCategory('Family')}
             className={
               category === 'Family'
-                ? ' text-primary  font-semibold text-2xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 mt-2'
-                : ' font-semibold text-2xl cursor-pointer mt-2 mt-2'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
+            <MdOutlineFamilyRestroom className="mr-3" />
             Family
           </h1>
           <h1
             onClick={() => setCategory('Bachelor')}
             className={
               category === 'Bachelor'
-                ? ' text-primary  font-semibold text-2xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2'
-                : ' font-semibold text-2xl cursor-pointer mt-2'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
+            <FaBlind className="mr-3" />
             Bachelor
           </h1>
           <h1
             onClick={() => setCategory('Sublet')}
             className={
               category === 'Sublet'
-                ? ' text-primary  font-semibold text-2xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2'
-                : ' font-semibold text-2xl cursor-pointer mt-2'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
-            Sublet
+            <FaUserFriends className="mr-3" /> Sublet
           </h1>
           <h1
             onClick={() => setCategory('Office')}
             className={
               category === 'Office'
-                ? ' text-primary  font-semibold text-2xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2'
-                : ' font-semibold text-2xl cursor-pointer mt-2'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
-            Office
+            <FaUniversity className="mr-3" /> Office
           </h1>
           <h1
             onClick={() => setCategory('Hostel')}
             className={
               category === 'Hostel'
-                ? ' text-primary  font-semibold text-2xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2'
-                : ' font-semibold text-2xl cursor-pointer mt-2'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
-            Hostel
+            <FaHeading className="mr-3" /> Hostel
+          </h1>
+
+          <h1 className="text-2xl my-3 font-bold uppercase">Area</h1>
+          <h1
+            onClick={() => setCategory('Dhaka')}
+            className={
+              category === 'Dhaka'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
+            }
+          >
+            Dhaka
+          </h1>
+          <h1
+            onClick={() => setCategory('Barishal')}
+            className={
+              category === 'Barishal'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
+            }
+          >
+            Barishal
+          </h1>
+          <h1
+            onClick={() => setCategory('Khulna')}
+            className={
+              category === 'Khulna'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
+            }
+          >
+            Khulna
+          </h1>
+          <h1
+            onClick={() => setCategory('Sylhet')}
+            className={
+              category === 'Sylhet'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
+            }
+          >
+            Sylhet
           </h1>
         </div>
         <div className="col-span-10  w-full pl-10">page </div>
