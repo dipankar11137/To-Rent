@@ -10,10 +10,10 @@ import NotFound from "./Components/Share/NotFound";
 
 function App() {
   return (
-    <div>
+    <div className="bg-green-100">
       {/* <CreateAccount /> */}
       <Navbar />
-    
+
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/createAccount" element={<CreateAccount />}></Route>

@@ -1,10 +1,12 @@
 import React from "react";
-import HomePage from "./HomePage";
+import Footer from '../../Share/Footer';
+import HomePage from './HomePage';
 
 const Home = () => {
   return (
     <div>
-    <HomePage/>
+      <HomePage />
+      <Footer />
     </div>
   );
 };

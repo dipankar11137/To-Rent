@@ -7,6 +7,7 @@ import {
   FaUserFriends,
 } from 'react-icons/fa';
 import { MdOutlineFamilyRestroom } from 'react-icons/md';
+import RoomCard from './RoomCard';
 
 const HomePage = () => {
   const [category, setCategory] = useState('');
@@ -119,7 +120,12 @@ const HomePage = () => {
             Sylhet
           </h1>
         </div>
-        <div className="col-span-10  w-full pl-10">page </div>
+        <div className="col-span-10  w-full pl-10 mt-5">
+          <div className="grid grid-cols-2 gap-x-10">
+            <RoomCard />
+            <RoomCard />
+          </div>
+        </div>
       </div>
     </div>
   );
