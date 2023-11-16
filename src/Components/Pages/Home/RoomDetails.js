@@ -1,26 +1,19 @@
 import React from 'react';
 import { FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
-import { useNavigate } from 'react-router-dom';
+import { IoLocationSharp } from 'react-icons/io5';
+import ImageView from '../ImageView';
 
-const RoomCard = () => {
-  const navigate = useNavigate();
-  const handleDetails = () => {
-    navigate('/roomDetails');
-  };
+const RoomDetails = () => {
   return (
-    <div className="card card-side bg-base-100 shadow-xl shadow-red-400">
+    <div className="md:mx-36 mt-10 bg-green-50 ">
       <div className="grid grid-cols-12">
         <div className="col-span-7">
-          <img
-            className="w-[300px] h-[260px]  rounded-l-xl"
-            src="https://www.thespruce.com/thmb/2_Q52GK3rayV1wnqm6vyBvgI3Ew=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/put-together-a-perfect-guest-room-1976987-hero-223e3e8f697e4b13b62ad4fe898d492d.jpg"
-            alt="Movie"
-          />
+          <ImageView />
         </div>
-        <div className="col-span-5 ml-3">
+        <div className="col-span-5 ml-20 mt-10">
           <div>
-            <h2 className="text-3xl font-bold">Family </h2>
+            <h2 className="text-4xl font-bold">Family </h2>
             <p>Uttara, Dhaka</p>
             <p className="mt-2 flex items-center">
               <FaCheck className="mr-2 text-green-600" />
@@ -45,20 +38,16 @@ const RoomCard = () => {
               Rent : <span className="font-semibold">10000k</span>
             </p>
           </div>
-          <div className="mt-3 flex justify-between pr-2">
+          <div className="flex justify-between pr-2 mt-10">
+            <h1>Contact : 017257985145</h1>
             <a
               target="blank"
-              className="text-orange-500 underline font-semibold "
+              className="text-orange-500 underline font-semibold flex items-center"
               href="https://maps.app.goo.gl/ijoYzpeV6Wfvtydj8"
             >
-              Live Location
+              <IoLocationSharp className="mr-2 animate-bounce text-lg" /> Live
+              Location
             </a>
-            <button
-              onClick={handleDetails}
-              className="text-white bg-primary px-2 rounded-md"
-            >
-              Details
-            </button>
           </div>
         </div>
       </div>
@@ -66,4 +55,4 @@ const RoomCard = () => {
   );
 };
 
-export default RoomCard;
+export default RoomDetails;
