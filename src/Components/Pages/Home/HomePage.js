@@ -78,7 +78,9 @@ const HomePage = () => {
             <FaHeading className="mr-3" /> Hostel
           </h1>
 
-          <h1 className="text-2xl my-3 font-bold uppercase">Area</h1>
+          <h1 className="text-3xl my-3 font-bold uppercase underline text-blue-700">
+            Area
+          </h1>
           <h1
             onClick={() => setCategory('Dhaka')}
             className={

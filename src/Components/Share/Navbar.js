@@ -81,16 +81,16 @@ const Navbar = () => {
           </label>
           <ul
             tabIndex="0"
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 text-black "
+            className="menu menu-compact dropdown-content   shadow bg-base-100 rounded-box w-52 text-black "
           >
             {menuItems}
           </ul>
         </div>
         <Link
           to="/"
-          className="btn btn-ghost normal-case font-bold lg:text-3xl  sm:text-sm text-amber-500"
+          className="btn btn-ghost normal-case font-bold lg:text-xl  sm:text-sm text-amber-500"
         >
-          <img className="h-12 mr-2" src="" alt="" />
+          <img className="h-6 mr-2" src="" alt="" />
           Logo/name
         </Link>
       </div>
@@ -130,10 +130,11 @@ const Navbar = () => {
               <div className="w-10 rounded-full">
                 {/* <img src="https://placeimg.com/80/80/people" alt="" /> */}
                 {user.photoURL ? (
-                  <img src={user?.photoURL} alt="" />
+                  <img className="h-6" src={user?.photoURL} alt="" />
                 ) : (
                   // <h1>D</h1>
                   <img
+                    className="h-6"
                     src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
                     alt=""
                   />
