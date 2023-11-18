@@ -1,7 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 
 const AddItems = () => {
+  const [category, setCategory] = useState('');
+  const [area, setArea] = useState('');
+  const [gas, setGas] = useState(false);
+  const [lift, setLift] = useState(false);
+  const [current, setCurrent] = useState(false);
+  const [water, setWater] = useState(false);
+  console.log(gas);
+
   const {
     register,
     formState: { errors },
@@ -14,13 +22,10 @@ const AddItems = () => {
     <div className="mx-20 pb-10">
       <div className="mx-20">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="md:flex justify-center lg:gap-x-32">
+          <div className="md:flex justify-center lg:gap-x-32 mt-5">
             <div className="w-[400px]">
               {/* Name */}
               <div className="form-control w-full ">
-                <label className="label">
-                  <span className="label-text">Name</span>
-                </label>
                 <input
                   type="text"
                   placeholder="Enter Your Name"
@@ -209,7 +214,113 @@ const AddItems = () => {
                 </label>
               </div>
             </div>
-            <div></div>
+            <div>
+              {/* Category */}
+              <select
+                onClick={e => setCategory(e.target.value)}
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold"
+              >
+                <option disabled selected>
+                  Select Your Rent Category
+                </option>
+                <option>HOME</option>
+                <option>FAMILY</option>
+                <option>BACHELOR</option>
+                <option>SUBLET</option>
+                <option>OFFICE</option>
+                <option>HOSTEL</option>
+              </select>
+              {/* Area */}
+              <select
+                onClick={e => setArea(e.target.value)}
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+              >
+                <option disabled selected>
+                  Select Your Area
+                </option>
+                <option>DHAKA</option>
+                <option>BARISHAL</option>
+                <option>KHULNA</option>
+                <option>SYLHET</option>
+              </select>
+              {/* Gas */}
+              <select
+                onClick={e => setArea(e.target.value)}
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+              >
+                <option disabled selected>
+                  Select Your Area
+                </option>
+                <option>DHAKA</option>
+                <option>BARISHAL</option>
+                <option>KHULNA</option>
+                <option>SYLHET</option>
+              </select>
+              {/* Area */}
+              <select
+                onClick={e => setArea(e.target.value)}
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+              >
+                <option disabled selected>
+                  Select Your Area
+                </option>
+                <option>DHAKA</option>
+                <option>BARISHAL</option>
+                <option>KHULNA</option>
+                <option>SYLHET</option>
+              </select>
+              {/* Area */}
+              <select
+                onClick={e => setArea(e.target.value)}
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+              >
+                <option disabled selected>
+                  Select Your Area
+                </option>
+                <option>DHAKA</option>
+                <option>BARISHAL</option>
+                <option>KHULNA</option>
+                <option>SYLHET</option>
+              </select>
+              <div className="grid grid-cols-2 gap-3 mt-3 text-xl w-[400px]">
+                <label>
+                  <input
+                    className="mr-2 bg-primary"
+                    type="checkbox"
+                    checked={gas}
+                    onChange={() => setGas(!gas)}
+                  />
+                  Gas
+                </label>
+                <label>
+                  <input
+                    className="mr-2 bg-primary"
+                    type="checkbox"
+                    checked={lift}
+                    onChange={() => setLift(!lift)}
+                  />
+                  Lift
+                </label>
+                <label>
+                  <input
+                    className="mr-2 bg-primary"
+                    type="checkbox"
+                    checked={water}
+                    onChange={() => setWater(!water)}
+                  />
+                  Water
+                </label>
+                <label>
+                  <input
+                    className="mr-2 bg-primary"
+                    type="checkbox"
+                    checked={current}
+                    onChange={() => setCurrent(!current)}
+                  />
+                  Current
+                </label>
+              </div>
+            </div>
           </div>
           <input
             className="btn btn-primary btn-md w-full text-white"
