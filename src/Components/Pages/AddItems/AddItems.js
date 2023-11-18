@@ -13,7 +13,6 @@ const AddItems = () => {
   const [current, setCurrent] = useState(false);
   const [water, setWater] = useState(false);
   const [urlToImage, setUrlToImage] = useState(false);
-  const imageHostKey = '39899c0cdbfbe66a2dbde3818a91832c';
 
   const {
     register,
@@ -236,82 +235,82 @@ const AddItems = () => {
               {/* Category */}
               <select
                 onClick={e => setCategory(e.target.value)}
-                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold"
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold text-primary"
               >
                 <option disabled selected>
                   Select Your Rent Category
                 </option>
-                <option>HOME</option>
-                <option>FAMILY</option>
-                <option>BACHELOR</option>
-                <option>SUBLET</option>
-                <option>OFFICE</option>
-                <option>HOSTEL</option>
+                <option className=" text-black">HOME</option>
+                <option className=" text-black">FAMILY</option>
+                <option className=" text-black">BACHELOR</option>
+                <option className=" text-black">SUBLET</option>
+                <option className=" text-black">OFFICE</option>
+                <option className=" text-black">HOSTEL</option>
               </select>
               <br />
               {/* Area */}
               <select
                 onClick={e => setArea(e.target.value)}
-                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
               >
                 <option disabled selected>
                   Select Your Area
                 </option>
-                <option>DHAKA</option>
-                <option>BARISHAL</option>
-                <option>KHULNA</option>
-                <option>SYLHET</option>
+                <option className=" text-black">DHAKA</option>
+                <option className=" text-black">BARISHAL</option>
+                <option className=" text-black">KHULNA</option>
+                <option className=" text-black">SYLHET</option>
               </select>
               <br />
               {/* Bedroom */}
               <select
                 onClick={e => setBedroom(e.target.value)}
-                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
               >
                 <option disabled selected>
                   Select Your Bedroom
                 </option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
+                <option className=" text-black">1</option>
+                <option className=" text-black">2</option>
+                <option className=" text-black">3</option>
+                <option className=" text-black">4</option>
+                <option className=" text-black">5</option>
+                <option className=" text-black">6</option>
+                <option className=" text-black">7</option>
               </select>
               <br />
               {/* Bathroom */}
               <select
                 onClick={e => setBathroom(e.target.value)}
-                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
               >
                 <option disabled selected>
                   Select Your Bathroom
                 </option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
+                <option className=" text-black">1</option>
+                <option className=" text-black">2</option>
+                <option className=" text-black">3</option>
+                <option className=" text-black">4</option>
+                <option className=" text-black">5</option>
+                <option className=" text-black">6</option>
+                <option className=" text-black">7</option>
               </select>
               <br />
               {/* Balcony */}
               <select
                 onClick={e => setBalcony(e.target.value)}
-                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
               >
                 <option disabled selected>
                   Select Your Balcony
                 </option>
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
+                <option className=" text-black">1</option>
+                <option className=" text-black">2</option>
+                <option className=" text-black">3</option>
+                <option className=" text-black">4</option>
+                <option className=" text-black">5</option>
+                <option className=" text-black">6</option>
+                <option className=" text-black">7</option>
               </select>
               <div className="grid grid-cols-2 gap-3 mt-3 text-xl w-[400px]">
                 <label>
@@ -472,11 +471,20 @@ const AddItems = () => {
               </div>
             </div>
           </div>
-          <input
-            className="btn btn-primary btn-md w-full text-white"
-            type="submit"
-            value=" Add Items "
-          />
+          {category && bedroom && bathroom && balcony && area ? (
+            <input
+              className="btn btn-primary btn-md w-full text-white"
+              type="submit"
+              value=" Add Items "
+            />
+          ) : (
+            <input
+              disabled
+              className="btn btn-primary btn-md w-full text-white"
+              type="submit"
+              value=" Add Items "
+            />
+          )}
         </form>
       </div>
     </div>
