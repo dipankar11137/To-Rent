@@ -3,12 +3,15 @@ import { useForm } from 'react-hook-form';
 
 const AddItems = () => {
   const [category, setCategory] = useState('');
+  const [bedroom, setBedroom] = useState('');
+  const [bathroom, setBathroom] = useState('');
+  const [balcony, setBalcony] = useState('');
   const [area, setArea] = useState('');
   const [gas, setGas] = useState(false);
   const [lift, setLift] = useState(false);
   const [current, setCurrent] = useState(false);
   const [water, setWater] = useState(false);
-  console.log(gas);
+  const imageHostKey = '39899c0cdbfbe66a2dbde3818a91832c';
 
   const {
     register,
@@ -16,13 +19,40 @@ const AddItems = () => {
     handleSubmit,
   } = useForm();
   const onSubmit = data => {
-    console.log(data);
+    const image = data.image[0];
+
+    const formData = new FormData();
+    formData.append('image', image);
+    const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`;
+    fetch(url, {
+      method: 'POST',
+      body: formData,
+    })
+      .then(res => res.json())
+      .then(imageData => {
+        const image = imageData.data.url;
+        //  const changeUrl = { ...data, service: service, img: image };
+        //  console.log(changeUrl);
+
+        //  fetch(`http://localhost:5000/allServices`, {
+        //    method: 'POST',
+        //    headers: {
+        //      'content-type': 'application/json',
+        //    },
+        //    body: JSON.stringify(changeUrl),
+        //  })
+        //    .then(res => res.json())
+        //    .then(data => {
+        //      toast.success('Successfully Add This ');
+        //      reset();
+        //    });
+      });
   };
   return (
     <div className="mx-20 pb-10">
       <div className="mx-20">
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="md:flex justify-center lg:gap-x-32 mt-5">
+          <div className="md:flex  lg:gap-x-32 mt-5">
             <div className="w-[400px]">
               {/* Name */}
               <div className="form-control w-full ">
@@ -214,7 +244,7 @@ const AddItems = () => {
                 </label>
               </div>
             </div>
-            <div>
+            <div className="">
               {/* Category */}
               <select
                 onClick={e => setCategory(e.target.value)}
@@ -230,6 +260,7 @@ const AddItems = () => {
                 <option>OFFICE</option>
                 <option>HOSTEL</option>
               </select>
+              <br />
               {/* Area */}
               <select
                 onClick={e => setArea(e.target.value)}
@@ -243,44 +274,56 @@ const AddItems = () => {
                 <option>KHULNA</option>
                 <option>SYLHET</option>
               </select>
-              {/* Gas */}
+              <br />
+              {/* Bedroom */}
               <select
-                onClick={e => setArea(e.target.value)}
+                onClick={e => setBedroom(e.target.value)}
                 className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
               >
                 <option disabled selected>
-                  Select Your Area
+                  Select Your Bedroom
                 </option>
-                <option>DHAKA</option>
-                <option>BARISHAL</option>
-                <option>KHULNA</option>
-                <option>SYLHET</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
               </select>
-              {/* Area */}
+              <br />
+              {/* Bathroom */}
               <select
-                onClick={e => setArea(e.target.value)}
+                onClick={e => setBathroom(e.target.value)}
                 className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
               >
                 <option disabled selected>
-                  Select Your Area
+                  Select Your Bathroom
                 </option>
-                <option>DHAKA</option>
-                <option>BARISHAL</option>
-                <option>KHULNA</option>
-                <option>SYLHET</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
               </select>
-              {/* Area */}
+              <br />
+              {/* Balcony */}
               <select
-                onClick={e => setArea(e.target.value)}
+                onClick={e => setBalcony(e.target.value)}
                 className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3"
               >
                 <option disabled selected>
-                  Select Your Area
+                  Select Your Balcony
                 </option>
-                <option>DHAKA</option>
-                <option>BARISHAL</option>
-                <option>KHULNA</option>
-                <option>SYLHET</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
               </select>
               <div className="grid grid-cols-2 gap-3 mt-3 text-xl w-[400px]">
                 <label>
@@ -319,6 +362,9 @@ const AddItems = () => {
                   />
                   Current
                 </label>
+              </div>
+              <div>
+                <h1>Image</h1>
               </div>
             </div>
           </div>
