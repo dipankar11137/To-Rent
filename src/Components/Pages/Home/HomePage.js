@@ -19,7 +19,7 @@ const HomePage = () => {
             onClick={() => setCategory('Home')}
             className={
               category === 'Home'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
@@ -29,7 +29,7 @@ const HomePage = () => {
             onClick={() => setCategory('Family')}
             className={
               category === 'Family'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
@@ -40,7 +40,7 @@ const HomePage = () => {
             onClick={() => setCategory('Bachelor')}
             className={
               category === 'Bachelor'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
@@ -51,7 +51,7 @@ const HomePage = () => {
             onClick={() => setCategory('Sublet')}
             className={
               category === 'Sublet'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
@@ -61,7 +61,7 @@ const HomePage = () => {
             onClick={() => setCategory('Office')}
             className={
               category === 'Office'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center  bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
@@ -71,7 +71,7 @@ const HomePage = () => {
             onClick={() => setCategory('Hostel')}
             className={
               category === 'Hostel'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
           >
@@ -85,7 +85,7 @@ const HomePage = () => {
             onClick={() => setCategory('Dhaka')}
             className={
               category === 'Dhaka'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase  bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
             }
           >
@@ -95,7 +95,7 @@ const HomePage = () => {
             onClick={() => setCategory('Barishal')}
             className={
               category === 'Barishal'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase  bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
             }
           >
@@ -105,7 +105,7 @@ const HomePage = () => {
             onClick={() => setCategory('Khulna')}
             className={
               category === 'Khulna'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
             }
           >
@@ -115,7 +115,7 @@ const HomePage = () => {
             onClick={() => setCategory('Sylhet')}
             className={
               category === 'Sylhet'
-                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase'
+                ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
             }
           >
