@@ -4,6 +4,7 @@ import { ImCross } from 'react-icons/im';
 import { IoLocationSharp } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
 import ImageView from '../ImageView';
+import BookModal from './HappyClient/BookModal';
 
 const RoomDetails = () => {
   const navigate = useNavigate();
@@ -92,7 +93,19 @@ const RoomDetails = () => {
         </div>
       </div>
       <div className="mt-10">
-        <button className="btn btn-primary w-full text-white">Book Now</button>
+        {/* <button className="btn btn-primary w-full text-white">Book Now</button> */}
+        <label
+          htmlFor="my_modal_6"
+          className="btn btn-primary w-full text-white"
+        >
+          Book Now
+        </label>
+
+        {/* Put this part before </body> tag */}
+        <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+        <div className="modal" role="dialog">
+          <BookModal />
+        </div>
       </div>
     </div>
   );

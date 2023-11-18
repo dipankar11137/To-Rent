@@ -6,6 +6,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import './App.css';
 import CreateAccount from './Components/Login/CreateAccount';
 import Login from './Components/Login/Login';
+import AddItems from './Components/Pages/AddItems/AddItems';
 import Home from './Components/Pages/Home/Home';
 import RoomDetails from './Components/Pages/Home/RoomDetails';
 import Navbar from './Components/Share/Navbar';
@@ -22,6 +23,7 @@ function App() {
         <Route path="/createAccount" element={<CreateAccount />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/roomDetails" element={<RoomDetails />}></Route>
+        <Route path="/addItems" element={<AddItems />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
       </Routes>
       {/* <Footer /> */}
