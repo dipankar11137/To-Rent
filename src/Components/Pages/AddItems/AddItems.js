@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import ImageToUrl from './ImageToUrl';
 
 const AddItems = () => {
   const [category, setCategory] = useState('');
@@ -11,6 +12,7 @@ const AddItems = () => {
   const [lift, setLift] = useState(false);
   const [current, setCurrent] = useState(false);
   const [water, setWater] = useState(false);
+  const [urlToImage, setUrlToImage] = useState(false);
   const imageHostKey = '39899c0cdbfbe66a2dbde3818a91832c';
 
   const {
@@ -19,41 +21,27 @@ const AddItems = () => {
     handleSubmit,
   } = useForm();
   const onSubmit = data => {
-    const image = data.image[0];
-
-    const formData = new FormData();
-    formData.append('image', image);
-    const url = `https://api.imgbb.com/1/upload?expiration=600&key=${imageHostKey}`;
-    fetch(url, {
-      method: 'POST',
-      body: formData,
-    })
-      .then(res => res.json())
-      .then(imageData => {
-        const image = imageData.data.url;
-        //  const changeUrl = { ...data, service: service, img: image };
-        //  console.log(changeUrl);
-
-        //  fetch(`http://localhost:5000/allServices`, {
-        //    method: 'POST',
-        //    headers: {
-        //      'content-type': 'application/json',
-        //    },
-        //    body: JSON.stringify(changeUrl),
-        //  })
-        //    .then(res => res.json())
-        //    .then(data => {
-        //      toast.success('Successfully Add This ');
-        //      reset();
-        //    });
-      });
+    // fetch(`http://localhost:5000/allServices`, {
+    //   method: 'POST',
+    //   headers: {
+    //     'content-type': 'application/json',
+    //   },
+    //   body: JSON.stringify(changeData),
+    // })
+    //   .then(res => res.json())
+    //   .then(data => {
+    //     toast.success('Successfully Add This ');
+    //     reset();
+    //   });
   };
   return (
     <div className="mx-20 pb-10">
       <div className="mx-20">
+        {urlToImage && <ImageToUrl />}
+        <h1 className="mt-3 text-center text-3xl font-bold">Add Items</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
-          <div className="md:flex  lg:gap-x-32 mt-5">
-            <div className="w-[400px]">
+          <div className="md:flex  lg:gap-x-14 mt-5">
+            <div className="w-[350px] ">
               {/* Name */}
               <div className="form-control w-full ">
                 <input
@@ -244,7 +232,7 @@ const AddItems = () => {
                 </label>
               </div>
             </div>
-            <div className="">
+            <div className=" w-[300px]">
               {/* Category */}
               <select
                 onClick={e => setCategory(e.target.value)}
@@ -363,8 +351,124 @@ const AddItems = () => {
                   Current
                 </label>
               </div>
-              <div>
-                <h1>Image</h1>
+            </div>
+            <div className="w-[350px] ">
+              <h1 className="text-xl mb-3 font-semibold">Enter Five Image</h1>
+              {/* Image 1 */}
+              <div className="form-control w-full ">
+                <input
+                  type="text"
+                  placeholder="Image No 1 (url)"
+                  className="input input-bordered h-10 bg-white w-full "
+                  {...register('image1', {
+                    required: {
+                      value: true,
+                      message: 'Image 1 is Required',
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.image1?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.image1.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              {/* Image 2 */}
+              <div className="form-control w-full ">
+                <input
+                  type="text"
+                  placeholder="Image No 2 (url)"
+                  className="input input-bordered h-10 bg-white w-full "
+                  {...register('image2', {
+                    required: {
+                      value: true,
+                      message: 'Image 2 is Required',
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.image2?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.image2.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              {/* Image 3 */}
+              <div className="form-control w-full ">
+                <input
+                  type="text"
+                  placeholder="Image No 3 (url)"
+                  className="input input-bordered h-10 bg-white w-full "
+                  {...register('image3', {
+                    required: {
+                      value: true,
+                      message: 'Image 3 is Required',
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.image3?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.image3.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              {/* Image 4 */}
+              <div className="form-control w-full ">
+                <input
+                  type="text"
+                  placeholder="Image No 4 (url)"
+                  className="input input-bordered h-10 bg-white w-full "
+                  {...register('image4', {
+                    required: {
+                      value: true,
+                      message: 'Image 4 is Required',
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.image4?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.image4.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              {/* Image 5 */}
+              <div className="form-control w-full ">
+                <input
+                  type="text"
+                  placeholder="Image No 5 (url)"
+                  className="input input-bordered h-10 bg-white w-full "
+                  {...register('image5', {
+                    required: {
+                      value: true,
+                      message: 'Image 5 is Required',
+                    },
+                  })}
+                />
+                <label className="label">
+                  {errors.image5?.type === 'required' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.image5.message}
+                    </span>
+                  )}
+                </label>
+              </div>
+              <div className="text-xl mt-4 text-primary font-semibold">
+                <label>
+                  <input
+                    className="mr-2 bg-primary text-primary"
+                    type="checkbox"
+                    checked={urlToImage}
+                    onChange={() => setUrlToImage(!urlToImage)}
+                  />
+                  Get Image To Url
+                </label>
               </div>
             </div>
           </div>
