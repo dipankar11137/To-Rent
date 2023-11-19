@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import {
   FaBlind,
   FaHeading,
@@ -11,6 +11,13 @@ import RoomCard from './RoomCard';
 
 const HomePage = () => {
   const [category, setCategory] = useState('');
+  const [flats, setFlats] = useState([]);
+
+  useEffect(() => {
+    fetch('http://localhost:5000/flats')
+      .then(res => res.json())
+      .then(data => setFlats(data));
+  }, [flats]);
   return (
     <div className="mx-20 shadow-red-500 shadow-r-lg">
       <div className="grid grid-cols-12">
@@ -124,15 +131,9 @@ const HomePage = () => {
         </div>
         <div className="col-span-10  w-full pl-10 mt-5">
           <div className="grid grid-cols-2 gap-10 ">
-            <RoomCard />
-            <RoomCard />
-            <RoomCard />
-            <RoomCard />
-            <RoomCard />
-            <RoomCard />
-            <RoomCard />
-            <RoomCard />
-            <RoomCard />
+            {flats.map(flat => (
+              <RoomCard key={flat._id} flat={flat}></RoomCard>
+            ))}
           </div>
         </div>
       </div>

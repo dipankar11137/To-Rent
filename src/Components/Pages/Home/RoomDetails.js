@@ -2,11 +2,13 @@ import React from 'react';
 import { FaArrowLeft, FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IoLocationSharp } from 'react-icons/io5';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import ImageView from '../ImageView';
 import BookModal from './HappyClient/BookModal';
 
 const RoomDetails = () => {
+  const { id } = useParams();
+  console.log(id);
   const navigate = useNavigate();
   const handleBack = () => {
     navigate('/');

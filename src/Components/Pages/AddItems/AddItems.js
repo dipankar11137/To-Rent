@@ -351,6 +351,29 @@ const AddItems = () => {
                   />
                   Current
                 </label>
+                {/* rent */}
+                <h1 className="text-xl mt-5 font-semibold">Rent</h1>
+                <br />
+                <div className="form-control w-full ">
+                  <input
+                    type="number"
+                    placeholder="Enter Your Rent"
+                    className="input input-bordered h-10 bg-white  pt-1 w-[300px]"
+                    {...register('rent', {
+                      required: {
+                        value: true,
+                        message: 'Rent is Required',
+                      },
+                    })}
+                  />
+                  <label className="label">
+                    {errors.rent?.type === 'required' && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.rent.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
               </div>
             </div>
             <div className="w-[350px] ">

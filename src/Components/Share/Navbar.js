@@ -83,19 +83,23 @@ const Navbar = () => {
             tabIndex="0"
             className="menu menu-compact dropdown-content   shadow bg-base-100 rounded-box w-52 text-black "
           >
-            {menuItems}
+            {/* {menuItems} */}
           </ul>
         </div>
         <Link
           to="/"
-          className="btn btn-ghost normal-case font-bold lg:text-xl  sm:text-sm text-amber-500"
+          className="btn btn-ghost normal-case font-bold lg:text-xl  sm:text-sm text-white"
         >
-          <img className="h-6 mr-2" src="" alt="" />
-          Logo/name
+          <img
+            className="h-10 rounded-2xl mr-2"
+            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdr9q6UiCLATEAU_WSiVdUxKgENgCarm2g3A&usqp=CAU"
+            alt=""
+          />
+          To Rent
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex lg:pr-36 ml-40">
-        <ul className="menu menu-horizontal p-0">{menuItems}</ul>
+        {/* <ul className="menu menu-horizontal p-0">{menuItems}</ul> */}
       </div>
       {/* Image */}
       <div className="navbar-end">
