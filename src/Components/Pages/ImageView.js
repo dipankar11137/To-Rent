@@ -12,7 +12,7 @@ import './ImageView.css';
 // import required modules
 import { Autoplay, Navigation, Pagination } from 'swiper/modules';
 
-const ImageView = () => {
+const ImageView = ({ flat }) => {
   const progressCircle = useRef(null);
   const progressContent = useRef(null);
   const onAutoplayTimeLeft = (s, time, progress) => {
@@ -38,22 +38,19 @@ const ImageView = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <img
-            src="https://hips.hearstapps.com/hmg-prod/images/living-room-ideas-caroline-turner-orchardlane01-copy-1670968014.jpeg?crop=0.670xw:1.00xh;0.166xw,0&resize=640:*"
-            alt=""
-          />
+          <img src={flat?.image1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQgzuFQqS9__Glsyu7OGTr43dz_CW7ne_r512wPtWRuxvHCPJ9KON-N4QRqzgQY4cGUXr8&usqp=CAU"
-            alt=""
-          />
+          <img src={flat?.image2} alt="" />
         </SwiperSlide>
         <SwiperSlide>
-          <img
-            src="https://st.depositphotos.com/1000347/2412/i/450/depositphotos_24120055-stock-photo-empty-room.jpg"
-            alt=""
-          />
+          <img src={flat?.image3} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={flat?.image4} alt="" />
+        </SwiperSlide>
+        <SwiperSlide>
+          <img src={flat?.image5} alt="" />
         </SwiperSlide>
 
         <div className="autoplay-progress" slot="container-end">

@@ -21,8 +21,19 @@ const AddItems = () => {
     handleSubmit,
   } = useForm();
   const onSubmit = data => {
-    const updateData = { ...data, area, gas, lift, current, water, category };
-    console.log(updateData);
+    const updateData = {
+      ...data,
+      area,
+      gas,
+      lift,
+      current,
+      water,
+      category,
+      bathroom,
+      bedroom,
+      balcony,
+    };
+    // console.log(updateData);
     fetch(`http://localhost:5000/flats`, {
       method: 'POST',
       headers: {
