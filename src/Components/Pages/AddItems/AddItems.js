@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
+import { toast } from 'react-toastify';
 import ImageToUrl from './ImageToUrl';
 
 const AddItems = () => {
@@ -20,22 +21,24 @@ const AddItems = () => {
     handleSubmit,
   } = useForm();
   const onSubmit = data => {
-    // fetch(`http://localhost:5000/allServices`, {
-    //   method: 'POST',
-    //   headers: {
-    //     'content-type': 'application/json',
-    //   },
-    //   body: JSON.stringify(changeData),
-    // })
-    //   .then(res => res.json())
-    //   .then(data => {
-    //     toast.success('Successfully Add This ');
-    //     reset();
-    //   });
+    const updateData = { ...data, area, gas, lift, current, water, category };
+    console.log(updateData);
+    fetch(`http://localhost:5000/flats`, {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify(updateData),
+    })
+      .then(res => res.json())
+      .then(data => {
+        toast.success('Successfully Add This Flat');
+        // reset();
+      });
   };
   return (
     <div className="mx-20 pb-10">
-      <div className="mx-20">
+      <div className="mx-20 bg-blue-50 rounded-lg p-2 shadow-xl">
         {urlToImage && <ImageToUrl />}
         <h1 className="mt-3 text-center text-3xl font-bold">Add Items</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
@@ -240,7 +243,6 @@ const AddItems = () => {
                 <option disabled selected>
                   Select Your Rent Category
                 </option>
-                <option className=" text-black">HOME</option>
                 <option className=" text-black">FAMILY</option>
                 <option className=" text-black">BACHELOR</option>
                 <option className=" text-black">SUBLET</option>
@@ -253,7 +255,7 @@ const AddItems = () => {
                 onClick={e => setArea(e.target.value)}
                 className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
               >
-                <option disabled selected>
+                <option className="text-black" disabled selected>
                   Select Your Area
                 </option>
                 <option className=" text-black">DHAKA</option>
