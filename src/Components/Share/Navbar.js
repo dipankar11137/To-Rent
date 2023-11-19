@@ -150,7 +150,7 @@ const Navbar = () => {
               className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800 dark:border-gray-700 hover:dark:bg-purple-900"
             >
               <li>
-                <Link to="/">Profile</Link>
+                <Link to="/addItems">Add Items</Link>
               </li>
               <li>
                 <Link to="/">Settings</Link>

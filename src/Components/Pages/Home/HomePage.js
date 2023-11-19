@@ -12,20 +12,20 @@ import RoomCard from './RoomCard';
 const HomePage = () => {
   const [category, setCategory] = useState('');
   const [flats, setFlats] = useState([]);
-
+  // console.log(category);
   useEffect(() => {
-    fetch('http://localhost:5000/flats')
+    fetch(`http://localhost:5000/flats/${category}`)
       .then(res => res.json())
       .then(data => setFlats(data));
-  }, [flats]);
+  }, [category, flats]);
   return (
     <div className="mx-20 shadow-red-500 shadow-r-lg">
       <div className="grid grid-cols-12">
         <div className="col-span-2  mt-10 pr-4 border-r-2 ">
           <h1
-            onClick={() => setCategory('Home')}
+            onClick={() => setCategory('')}
             className={
-              category === 'Home'
+              category === ''
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
@@ -33,9 +33,9 @@ const HomePage = () => {
             <FaHome className="mr-3" /> Home
           </h1>
           <h1
-            onClick={() => setCategory('Family')}
+            onClick={() => setCategory('FAMILY')}
             className={
-              category === 'Family'
+              category === 'FAMILY'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
@@ -44,9 +44,9 @@ const HomePage = () => {
             Family
           </h1>
           <h1
-            onClick={() => setCategory('Bachelor')}
+            onClick={() => setCategory('BACHELOR')}
             className={
-              category === 'Bachelor'
+              category === 'BACHELOR'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
@@ -55,9 +55,9 @@ const HomePage = () => {
             Bachelor
           </h1>
           <h1
-            onClick={() => setCategory('Sublet')}
+            onClick={() => setCategory('SUBLET')}
             className={
-              category === 'Sublet'
+              category === 'SUBLET'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
@@ -65,9 +65,9 @@ const HomePage = () => {
             <FaUserFriends className="mr-3" /> Sublet
           </h1>
           <h1
-            onClick={() => setCategory('Office')}
+            onClick={() => setCategory('OFFICE')}
             className={
-              category === 'Office'
+              category === 'OFFICE'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center  bg-white'
                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
             }
@@ -75,7 +75,7 @@ const HomePage = () => {
             <FaUniversity className="mr-3" /> Office
           </h1>
           <h1
-            onClick={() => setCategory('Hostel')}
+            onClick={() => setCategory('HOSTEL')}
             className={
               category === 'Hostel'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
@@ -89,7 +89,7 @@ const HomePage = () => {
             Area
           </h1>
           <h1
-            onClick={() => setCategory('Dhaka')}
+            onClick={() => setCategory('')}
             className={
               category === 'Dhaka'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase  bg-white'
@@ -99,7 +99,7 @@ const HomePage = () => {
             Dhaka
           </h1>
           <h1
-            onClick={() => setCategory('Barishal')}
+            onClick={() => setCategory('')}
             className={
               category === 'Barishal'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase  bg-white'
@@ -109,7 +109,7 @@ const HomePage = () => {
             Barishal
           </h1>
           <h1
-            onClick={() => setCategory('Khulna')}
+            onClick={() => setCategory('')}
             className={
               category === 'Khulna'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase bg-white'
@@ -119,7 +119,7 @@ const HomePage = () => {
             Khulna
           </h1>
           <h1
-            onClick={() => setCategory('Sylhet')}
+            onClick={() => setCategory('')}
             className={
               category === 'Sylhet'
                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase bg-white'

@@ -11,7 +11,7 @@ const BookModal = ({ flat }) => {
   } = useForm();
 
   const onSubmit = data => {
-    const updateData = { ...data, ...flat };
+    const updateData = { ...data, flat };
     fetch(`http://localhost:5000/bookFlats`, {
       method: 'POST',
       headers: {

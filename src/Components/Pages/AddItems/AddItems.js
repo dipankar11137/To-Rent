@@ -363,7 +363,7 @@ const AddItems = () => {
                   Current
                 </label>
                 {/* rent */}
-                <h1 className="text-xl mt-5 font-semibold">Rent</h1>
+                <h1 className="text-xl mt-3 font-semibold">Rent</h1>
                 <br />
                 <div className="form-control w-full ">
                   <input
@@ -385,6 +385,31 @@ const AddItems = () => {
                     )}
                   </label>
                 </div>
+                <br />
+
+                <div
+                  className="-mt-5 tooltip tooltip-accent"
+                  data-tip="Distance between 2 Building (Miter)"
+                >
+                  <input
+                    type="number"
+                    placeholder="Distance between 2 Building "
+                    className="input input-bordered h-10 bg-white  pt-1 w-[300px] "
+                    {...register('distance', {
+                      required: {
+                        value: true,
+                        message: 'Distance is Required',
+                      },
+                    })}
+                  />
+                  <label className="label">
+                    {errors.distance?.type === 'required' && (
+                      <span className="label-text-alt text-red-500">
+                        {errors.distance.message}
+                      </span>
+                    )}
+                  </label>
+                </div>
               </div>
             </div>
             <div className="w-[350px] ">
@@ -393,12 +418,12 @@ const AddItems = () => {
               <div className="form-control w-full ">
                 <input
                   type="text"
-                  placeholder="Image No 1 (url)"
+                  placeholder="Room Image (url)"
                   className="input input-bordered h-10 bg-white w-full "
                   {...register('image1', {
                     required: {
                       value: true,
-                      message: 'Image 1 is Required',
+                      message: 'Room Image is Required',
                     },
                   })}
                 />
@@ -414,12 +439,12 @@ const AddItems = () => {
               <div className="form-control w-full ">
                 <input
                   type="text"
-                  placeholder="Image No 2 (url)"
+                  placeholder="Bathroom Image (url)"
                   className="input input-bordered h-10 bg-white w-full "
                   {...register('image2', {
                     required: {
                       value: true,
-                      message: 'Image 2 is Required',
+                      message: 'Bathroom Image is Required',
                     },
                   })}
                 />
@@ -432,15 +457,18 @@ const AddItems = () => {
                 </label>
               </div>
               {/* Image 3 */}
-              <div className="form-control w-full ">
+              <div
+                className="form-control w-full tooltip  tooltip-secondary"
+                data-tip="Take a picture of the outside at a distance of 5 feet from the window"
+              >
                 <input
                   type="text"
-                  placeholder="Image No 3 (url)"
+                  placeholder="Window View (url)"
                   className="input input-bordered h-10 bg-white w-full "
                   {...register('image3', {
                     required: {
                       value: true,
-                      message: 'Image 3 is Required',
+                      message: 'Window View is Required',
                     },
                   })}
                 />
@@ -456,12 +484,12 @@ const AddItems = () => {
               <div className="form-control w-full ">
                 <input
                   type="text"
-                  placeholder="Image No 4 (url)"
+                  placeholder="Balcony View (url)"
                   className="input input-bordered h-10 bg-white w-full "
                   {...register('image4', {
                     required: {
                       value: true,
-                      message: 'Image 4 is Required',
+                      message: 'Balcony View is Required',
                     },
                   })}
                 />
@@ -477,12 +505,12 @@ const AddItems = () => {
               <div className="form-control w-full ">
                 <input
                   type="text"
-                  placeholder="Image No 5 (url)"
+                  placeholder=" Kitchen View (url)"
                   className="input input-bordered h-10 bg-white w-full "
                   {...register('image5', {
                     required: {
                       value: true,
-                      message: 'Image 5 is Required',
+                      message: 'Kitchen View is Required',
                     },
                   })}
                 />
