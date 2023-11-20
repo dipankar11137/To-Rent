@@ -152,8 +152,15 @@ const Navbar = () => {
               <li>
                 <Link to="/addItems">Add Items</Link>
               </li>
+              {/* <li>
+                <Link to="/">Profile</Link>
+              </li>
               <li>
-                <Link to="/">Settings</Link>
+                <Link to="/">Profile Settings</Link>
+              </li> */}
+              <li>
+                <Link to="/showBookProducts">Show Booking</Link>
+                <Link to="/manageFlats">Manage Flats</Link>
               </li>
 
               <li className=" font-bold">

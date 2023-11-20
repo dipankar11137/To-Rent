@@ -4,7 +4,7 @@ import contact from '../../../../Images/Contact/contact.png';
 
 const Contact = () => {
   return (
-    <div className="bg-gradient-to-t bg-blue-100 text-black mt-10">
+    <div className="bg-gradient-to-t bg-blue-100 text-black mt-36">
       <div className=" mx-20 grid grid-cols-3 ">
         <div className="p-4 col-span-2">
           <h1 className="py-4 text-4xl font-bold">

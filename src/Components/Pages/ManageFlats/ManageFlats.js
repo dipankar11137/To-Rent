@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import ShowBookProduct from './ShowBookProduct';
+import ManageFlat from './ManageFlat';
 
-const ShowBookProducts = () => {
+const ManageFlats = () => {
   const [bookings, setBooking] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/bookFlats`)
+    fetch(`http://localhost:5000/flats`)
       .then(res => res.json())
       .then(data => setBooking(data));
   }, [bookings]);
   const handleDelete = id => {
-    console.log(id);
+    // console.log(id);
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/bookFlatsDelete/${id}`;
+      const url = `http://localhost:5000/flats/${id}`;
       fetch(url, {
         method: 'DELETE',
       })
@@ -27,7 +27,7 @@ const ShowBookProducts = () => {
   };
   return (
     <div className="h-screen">
-      <div className="overflow-x-auto mx-20 mt-1 shadow">
+      <div className="overflow-x-auto mx-20 mt-1 shadow-lg">
         <table className="table w-full text-center">
           {/* head */}
           <thead>
@@ -42,7 +42,7 @@ const ShowBookProducts = () => {
           </thead>
           <tbody>
             {bookings.map(booking => (
-              <ShowBookProduct
+              <ManageFlat
                 key={booking._id}
                 booking={booking}
                 handleDelete={handleDelete}
@@ -55,4 +55,4 @@ const ShowBookProducts = () => {
   );
 };
 
-export default ShowBookProducts;
+export default ManageFlats;
