@@ -140,7 +140,10 @@ const AddItems = () => {
                 </label>
               </div>
               {/* location */}
-              <div className="form-control w-full ">
+              <div
+                className="form-control w-full tooltip-primary"
+                data-tip="Your Location from Google Map"
+              >
                 <input
                   type="text"
                   placeholder="Enter Your Location ( From Google Map)"
@@ -150,6 +153,10 @@ const AddItems = () => {
                       value: true,
                       message: 'Location is Required',
                     },
+                    pattern: {
+                      value: /^https:\/\//i,
+                      message: 'Please enter a valid URL For this location"',
+                    },
                   })}
                 />
                 <label className="label">
@@ -158,18 +165,30 @@ const AddItems = () => {
                       {errors.location.message}
                     </span>
                   )}
+                  {errors.location?.type === 'pattern' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.location.message}
+                    </span>
+                  )}
                 </label>
               </div>
               {/* Nearest Hospital */}
-              <div className="form-control w-full ">
+              <div
+                className="form-control w-full tooltip  tooltip-primary"
+                data-tip="Nearest Hospital Location from Google Map"
+              >
                 <input
                   type="text"
-                  placeholder="Enter Nearest Hospital Name"
+                  placeholder="Enter Nearest Hospital Location"
                   className="input input-bordered h-10 bg-white w-full  pt-1"
                   {...register('nHospital', {
                     required: {
                       value: true,
                       message: 'Nearest Hospital is Required',
+                    },
+                    pattern: {
+                      value: /^https:\/\//i,
+                      message: 'Please enter a valid URL For this location"',
                     },
                   })}
                 />
@@ -179,18 +198,30 @@ const AddItems = () => {
                       {errors.nHospital.message}
                     </span>
                   )}
+                  {errors.location?.type === 'pattern' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.location.message}
+                    </span>
+                  )}
                 </label>
               </div>
               {/* Nearest School */}
-              <div className="form-control w-full ">
+              <div
+                className="form-control w-full tooltip  tooltip-lime-300"
+                data-tip="Nearest School Location from Google Map"
+              >
                 <input
                   type="text"
-                  placeholder="Enter Nearest School Name"
+                  placeholder="Enter Nearest School Location"
                   className="input input-bordered h-10 bg-white w-full  pt-1"
                   {...register('nSchool', {
                     required: {
                       value: true,
                       message: 'Nearest School is Required',
+                    },
+                    pattern: {
+                      value: /^https:\/\//i,
+                      message: 'Please enter a valid URL For this location"',
                     },
                   })}
                 />
@@ -200,18 +231,30 @@ const AddItems = () => {
                       {errors.nSchool.message}
                     </span>
                   )}
+                  {errors.location?.type === 'pattern' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.location.message}
+                    </span>
+                  )}
                 </label>
               </div>
               {/* Nearest Supermarket */}
-              <div className="form-control w-full ">
+              <div
+                className="form-control w-full tooltip  tooltip-secondary"
+                data-tip="Nearest Supermarket Location from Google Map"
+              >
                 <input
                   type="text"
-                  placeholder="Enter Nearest Supermarket Name"
+                  placeholder="Nearest Supermarket Location "
                   className="input input-bordered h-10 bg-white w-full  pt-1"
                   {...register('nMarket', {
                     required: {
                       value: true,
                       message: 'Nearest Supermarket  is Required',
+                    },
+                    pattern: {
+                      value: /^https:\/\//i,
+                      message: 'Please enter a valid URL For this location"',
                     },
                   })}
                 />
@@ -219,6 +262,11 @@ const AddItems = () => {
                   {errors.nMarket?.type === 'required' && (
                     <span className="label-text-alt text-red-500">
                       {errors.nMarket.message}
+                    </span>
+                  )}
+                  {errors.location?.type === 'pattern' && (
+                    <span className="label-text-alt text-red-500">
+                      {errors.location.message}
                     </span>
                   )}
                 </label>

@@ -88,9 +88,30 @@ const RoomDetails = () => {
             <p>Bedroom : {flat?.bedroom}</p>
             <p>Bathroom : {flat?.bathroom}</p>
             <p>Balcony : {flat?.balcony}</p>
-            <p>Nearest Hospital : {flat?.nHospital}</p>
-            <p>Nearest School : {flat?.nSchool}</p>
-            <p>Nearest Supermarket : {flat?.nMarket}</p>
+            <a
+              target="blank"
+              className="text-green-600 underline font-semibold flex items-center"
+              href={flat?.nHospital}
+            >
+              <IoLocationSharp className="mr-2 animate-bounce text-lg" />{' '}
+              Nearest Hospital
+            </a>
+            <a
+              target="blank"
+              className="text-blue-500 underline font-semibold flex items-center"
+              href={flat?.nSchool}
+            >
+              <IoLocationSharp className="mr-2 animate-bounce text-lg" />
+              Nearest School
+            </a>
+            <a
+              target="blank"
+              className="text-red-600 underline font-semibold flex items-center"
+              href={flat?.nMarket}
+            >
+              <IoLocationSharp className="mr-2 animate-bounce text-lg" />{' '}
+              Nearest Supermarket
+            </a>
           </div>
           <h1 className="text-3xl mt-3">
             <span className="underline">Description</span> :{' '}
