@@ -1,6 +1,7 @@
 import React from 'react';
 import {
   useCreateUserWithEmailAndPassword,
+  useSignInWithEmailAndPassword,
   useSignInWithGoogle,
   useUpdateProfile,
 } from 'react-firebase-hooks/auth';
@@ -11,6 +12,8 @@ import auth from '../../firebase.init';
 
 const CreateAccount = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+  const [signInWithEmailAndPassword, user1, loading1, error1] =
+    useSignInWithEmailAndPassword(auth);
   const {
     register,
     formState: { errors },
@@ -32,22 +35,23 @@ const CreateAccount = () => {
   }
 
   const createDBUser = (name, email) => {
-    // fetch(`https://boxberry.onrender.com/create-user/${email}`, {
-    //   method: "PUT",
-    //   headers: {
-    //     "content-type": "application/json",
-    //   },
-    //   body: JSON.stringify({ name, email }),
-    // })
-    //   .then((res) => res.json())
-    //   .then((data) => {
-    //     console.log(data);
-    //   });
+    fetch(`http://localhost:5000/create-user/${email}`, {
+      method: 'PUT',
+      headers: {
+        'content-type': 'application/json',
+      },
+      body: JSON.stringify({ name, email }),
+    })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+      });
   };
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
     // console.log(data.email, data.password, data.name);
-    createUserWithEmailAndPassword(data.email, data.password);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await signInWithEmailAndPassword(data.email, data.password);
     updateProfile({ displayName: data.name });
     createDBUser(data.name, data.email);
     toast.success('Updated profile');

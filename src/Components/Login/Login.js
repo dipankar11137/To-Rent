@@ -43,14 +43,6 @@ const Login = () => {
   const onSubmit = async data => {
     const email = data.email;
     await signInWithEmailAndPassword(data.email, data.password);
-    // await toast.success('Successfully Login');
-    // const { accessToken } = await axios.post(
-    //   "https://boxberry.onrender.com/login",
-    //   {
-    //     email,
-    //   }
-    // );
-    // console.log(accessToken);
   };
 
   return (
@@ -137,7 +129,7 @@ const Login = () => {
             </form>
             <p>
               <small>
-                New to BoxBerry Motor?{' '}
+                New to Rent Website?{' '}
                 <Link to="/createAccount" className="text-orange-600 font-bold">
                   Create New Account
                 </Link>
