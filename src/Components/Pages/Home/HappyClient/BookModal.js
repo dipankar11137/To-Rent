@@ -64,7 +64,7 @@ const BookModal = ({ flat }) => {
               <span className="label-text">Phone Number</span>
             </label>
             <input
-              type="number"
+              type="phone"
               placeholder="Enter Your Phone Number"
               className="input input-bordered h-10 bg-white w-full "
               {...register('bookerNumber', {

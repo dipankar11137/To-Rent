@@ -59,7 +59,7 @@ const RoomCard = ({ flat }) => {
               <span className="font-semibold">{flat?.size} Square Feet</span>
             </p>
             <p>
-              Rent : <span className="font-semibold">{flat?.rent} k</span>
+              Rent : <span className="font-semibold">{flat?.rent} Taka</span>
             </p>
           </div>
           <div className="mt-3 flex justify-between pr-2">

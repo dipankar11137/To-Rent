@@ -21,7 +21,7 @@ const Navbar = () => {
   }, [booking,email]);
 
   const handleBook = () => {
-    navigate("/myOrders");
+    navigate('/showBookProducts');
   };
 
   const menuItems = (

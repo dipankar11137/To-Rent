@@ -9,6 +9,7 @@ import Login from './Components/Login/Login';
 import AddItems from './Components/Pages/AddItems/AddItems';
 import Home from './Components/Pages/Home/Home';
 import RoomDetails from './Components/Pages/Home/RoomDetails';
+import ShowBookProducts from './Components/Pages/ShowBookProduct/ShowBookProducts';
 import Navbar from './Components/Share/Navbar';
 import NotFound from './Components/Share/NotFound';
 AOS.init();
@@ -24,6 +25,7 @@ function App() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/roomDetails/:id" element={<RoomDetails />}></Route>
         <Route path="/addItems" element={<AddItems />}></Route>
+        <Route path="/showBookProducts" element={<ShowBookProducts />}></Route>
         <Route path="/*" element={<NotFound />}></Route>
       </Routes>
       {/* <Footer /> */}

@@ -96,7 +96,7 @@ const HomePage = () => {
            <h1
              onClick={() => setCategory('HOSTEL')}
              className={
-               category === 'Hostel'
+               category === 'HOSTEL'
                  ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase flex items-center bg-white'
                  : ' font-semibold text-xl cursor-pointer mt-2 uppercase flex items-center'
              }
