@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { FaArrowLeft, FaCheck } from 'react-icons/fa';
+import { FaArrowLeft, FaCalendarAlt, FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IoLocationSharp } from 'react-icons/io5';
 import { useNavigate, useParams } from 'react-router-dom';
@@ -29,6 +29,10 @@ const RoomDetails = () => {
           <div>
             <h2 className="text-4xl font-bold">FAMILY </h2>
             <p>{flat?.address}</p>
+            <p className="font-semibold flex gap-x-2 items-center">
+              <FaCalendarAlt className="text-orange-600" /> {flat?.month},
+              {flat?.year}
+            </p>
             <p className="mt-2 flex items-center">
               <ImCross className="text-sm text-red-700 mr-2" />
               Gas

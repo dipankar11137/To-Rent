@@ -13,6 +13,8 @@ const AddItems = () => {
   const [lift, setLift] = useState(false);
   const [current, setCurrent] = useState(false);
   const [water, setWater] = useState(false);
+  const [month, setMonth] = useState(false);
+  const [year, setYear] = useState(false);
   const [urlToImage, setUrlToImage] = useState(false);
 
   const {
@@ -51,7 +53,7 @@ const AddItems = () => {
     <div className="mx-20 pb-10">
       <div className="mx-20 bg-blue-50 rounded-lg p-2 shadow-xl">
         {urlToImage && <ImageToUrl />}
-        <h1 className="mt-3 text-center text-3xl font-bold">Add Items</h1>
+        <h1 className="mt-3 text-center text-3xl font-bold">Add Flats</h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="md:flex  lg:gap-x-14 mt-5">
             <div className="w-[350px] ">
@@ -570,6 +572,49 @@ const AddItems = () => {
                   )}
                 </label>
               </div>
+              {/* month */}
+              <select
+                onClick={e => setMonth(e.target.value)}
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
+              >
+                <option className="text-black" disabled selected>
+                  Select Month
+                </option>
+                <option className=" text-black">January</option>
+                <option className=" text-black">February</option>
+                <option className=" text-black">March</option>
+                <option className=" text-black">April</option>
+                <option className=" text-black">May</option>
+                <option className=" text-black">June</option>
+                <option className=" text-black">July</option>
+                <option className=" text-black">August</option>
+                <option className=" text-black">September</option>
+                <option className=" text-black">October</option>
+                <option className=" text-black">November</option>
+                <option className=" text-black">December</option>
+              </select>
+              <br />
+              {/* month */}
+              <select
+                onClick={e => setYear(e.target.value)}
+                className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
+              >
+                <option className="text-black" disabled selected>
+                  Select Year
+                </option>
+                <option className=" text-black">2023</option>
+                <option className=" text-black">2024</option>
+                <option className=" text-black">2025</option>
+                <option className=" text-black">2026</option>
+                <option className=" text-black">2027</option>
+                <option className=" text-black">2028</option>
+                <option className=" text-black">2029</option>
+                <option className=" text-black">2030</option>
+                <option className=" text-black">2031</option>
+                <option className=" text-black">2032</option>
+              </select>
+              <br />
+
               <div className="text-xl mt-4 text-primary font-semibold">
                 <label>
                   <input
@@ -583,7 +628,7 @@ const AddItems = () => {
               </div>
             </div>
           </div>
-          {category && bedroom && bathroom && balcony && area ? (
+          {category && bedroom && bathroom && balcony && month && year ? (
             <input
               className="btn btn-primary btn-md w-full text-white"
               type="submit"
