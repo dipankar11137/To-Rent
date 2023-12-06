@@ -308,9 +308,9 @@ const AddItems = () => {
                 <option className=" text-black">OFFICE</option>
                 <option className=" text-black">HOSTEL</option>
               </select>
-              <br />
+
               {/* Area */}
-              <select
+              {/* <select
                 onClick={e => setArea(e.target.value)}
                 className="select select-bordered w-full max-w-xs bg-white h-10 font-semibold mt-3 text-primary"
               >
@@ -321,7 +321,7 @@ const AddItems = () => {
                 <option className=" text-black">BARISHAL</option>
                 <option className=" text-black">KHULNA</option>
                 <option className=" text-black">SYLHET</option>
-              </select>
+              </select> */}
               <br />
               {/* Bedroom */}
               <select

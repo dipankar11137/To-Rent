@@ -1,6 +1,7 @@
 import React from 'react';
-import { FaCheck } from 'react-icons/fa';
+import { FaCalendarAlt, FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
+
 import { useNavigate } from 'react-router-dom';
 
 const RoomCard = ({ flat }) => {
@@ -13,7 +14,7 @@ const RoomCard = ({ flat }) => {
       <div className="grid grid-cols-12">
         <div className="col-span-7">
           <img
-            className="w-[300px] h-[260px]  rounded-l-xl"
+            className="w-[300px] h-[268px]  rounded-l-xl"
             src={flat?.image1}
             alt="flat"
           />
@@ -22,6 +23,9 @@ const RoomCard = ({ flat }) => {
           <div>
             <h2 className="text-3xl font-bold mt-3">{flat?.category} </h2>
             <p>{flat?.address}</p>
+            <p className="font-semibold flex gap-x-2 items-center">
+              <FaCalendarAlt className="text-orange-600" /> January, 2023
+            </p>
             <p className="mt-2 flex items-center">
               {flat?.gas ? (
                 <FaCheck className="mr-2 text-green-600" />
