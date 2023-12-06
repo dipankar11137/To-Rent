@@ -24,7 +24,7 @@ const RoomCard = ({ flat }) => {
             <h2 className="text-3xl font-bold mt-3">{flat?.category} </h2>
             <p>{flat?.address}</p>
             <p className="font-semibold flex gap-x-2 items-center">
-              <FaCalendarAlt className="text-orange-600" /> {flat?.month},
+              <FaCalendarAlt className="text-orange-600" /> {flat?.month},{'  '}
               {flat?.year}
             </p>
             <p className="mt-2 flex items-center">

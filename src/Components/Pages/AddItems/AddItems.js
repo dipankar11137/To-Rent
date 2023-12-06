@@ -34,6 +34,8 @@ const AddItems = () => {
       bathroom,
       bedroom,
       balcony,
+      month,
+      year,
     };
     // console.log(updateData);
     fetch(`http://localhost:5000/flats`, {
