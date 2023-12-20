@@ -142,16 +142,16 @@ const Navbar = () => {
             <label tabindex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 {/* <img src="https://placeimg.com/80/80/people" alt="" /> */}
-                {dbUser[0]?.image ? (
+                {/* {dbUser[0]?.image ? (
                   <img className="h-6" src={dbUser[0]?.image} alt="" />
-                ) : (
-                  // <h1>D</h1>
-                  <img
-                    className="h-6"
-                    src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
-                    alt=""
-                  />
-                )}
+                ) : ( */}
+
+                <img
+                  className="h-6"
+                  src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
+                  alt=""
+                />
+                {/* )} */}
               </div>
             </label>
             <ul

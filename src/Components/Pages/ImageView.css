@@ -30,12 +30,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 10px;
+  
 }
 
 .swiper-slide img {
   display: block;
-  width: 650px;
-  height: 400px;
+  width: 600px !important;
+  height: 350px !important;
   object-fit: cover;
 }
 

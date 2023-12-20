@@ -116,7 +116,7 @@ const HomePage = () => {
                onChange={handleSearch}
              />
            </div>
-           <h1
+           {/* <h1
              onClick={() => setCategory('')}
              className={
                category === 'Dhaka'
@@ -155,7 +155,7 @@ const HomePage = () => {
              }
            >
              Sylhet
-           </h1>
+           </h1> */}
          </div>
          <div className="col-span-10  w-full pl-10 mt-5">
            <div className="grid grid-cols-2 gap-10 ">
