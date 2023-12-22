@@ -105,8 +105,22 @@ const EditProfile = () => {
   const profilePic =
     'https://media.istockphoto.com/id/1393750072/vector/flat-white-icon-man-for-web-design-silhouette-flat-illustration-vector-illustration-stock.jpg?s=612x612&w=0&k=20&c=s9hO4SpyvrDIfELozPpiB_WtzQV9KhoMUP9R9gVohoU=';
   return (
-    <div className="w-full md:flex">
-      <div className="indicator bg-white rounded  m-4 w-1/3 h-fit  mt-40 shadow-xl shadow-blue-900">
+    <div
+      style={{
+        backgroundImage: ` URL(
+          'https://static.vecteezy.com/system/resources/previews/022/839/323/non_2x/concept-of-business-a-mortgage-white-house-construction-building-real-estate-house-on-table-white-background-3d-illustration-render-real-estate-property-concept-white-background-free-photo.jpg'
+        )`,
+      }}
+      className="w-full md:flex"
+    >
+      <div
+        style={{
+          backgroundImage: ` URL(
+          ''
+        )`,
+        }}
+        className="indicator bg-no-repeat bg-white  rounded  m-4 w-1/3 h-fit  mt-40 shadow-xl shadow-blue-900"
+      >
         <div className="-mt-6 ">
           <img
             style={{ margin: '-30px' }}

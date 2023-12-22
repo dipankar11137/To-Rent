@@ -100,7 +100,7 @@ const Navbar = () => {
         >
           <img
             className="h-10 rounded-2xl mr-2"
-            src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdr9q6UiCLATEAU_WSiVdUxKgENgCarm2g3A&usqp=CAU"
+            src="https://raw.githubusercontent.com/rohitkadu/House-Rent-App---Rohit-K/master/app/src/main/ic_launcher-playstore.png?token=GHSAT0AAAAAACCIVNSE4VY7EQJWKW4JOWMQZCWDZHA"
             alt=""
           />
           To Rent
@@ -142,31 +142,32 @@ const Navbar = () => {
             <label tabindex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
                 {/* <img src="https://placeimg.com/80/80/people" alt="" /> */}
-                {/* {dbUser[0]?.image ? (
+                {dbUser[0]?.image ? (
                   <img className="h-6" src={dbUser[0]?.image} alt="" />
-                ) : ( */}
-
-                <img
-                  className="h-6"
-                  src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
-                  alt=""
-                />
-                {/* )} */}
+                ) : (
+                  <img
+                    className="h-6"
+                    src="https://cdn.imgbin.com/6/25/24/imgbin-user-profile-computer-icons-user-interface-mystique-aBhn3R8cmqmP4ECky4DA3V88y.jpg"
+                    alt=""
+                  />
+                )}
               </div>
             </label>
             <ul
               tabindex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-40 bg-gray-800 border-gray-700 hover:bg-purple-900"
             >
+              {user?.email === 'abc@def.com' && (
+                <li>
+                  <Link to="/addItems">Add Flats</Link>
+                </li>
+              )}
               <li>
-                <Link to="/addItems">Add Flats</Link>
-              </li>
-              {/* <li>
-                <Link to="/">Profile</Link>
+                <Link to="/profile">Profile</Link>
               </li>
               <li>
-                <Link to="/">Profile Settings</Link>
-              </li> */}
+                <Link to="/editProfile">Profile Settings</Link>
+              </li>
               <li>
                 <Link to="/showBookProducts">Show Booking</Link>
                 <Link to="/manageFlats">Manage Flats</Link>

@@ -12,6 +12,7 @@ const RoomDetails = () => {
   const { id } = useParams();
   const [flat, setFlat] = useState({});
   const [reviews, setReview] = useState([]);
+  const cId = id;
 
   useEffect(() => {
     fetch(`http://localhost:5000/flat/${id}`)
@@ -19,7 +20,7 @@ const RoomDetails = () => {
       .then(data => setFlat(data));
   }, [id]);
   useEffect(() => {
-    fetch(`http://localhost:5000/reviews`)
+    fetch(`http://localhost:5000/review/${cId}`)
       .then(res => res.json())
       .then(data => setReview(data));
   }, [reviews]);
