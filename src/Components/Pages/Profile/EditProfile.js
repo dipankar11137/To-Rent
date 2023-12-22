@@ -252,7 +252,7 @@ const EditProfile = () => {
             </div>
 
             <input
-              className="btn w-full text-white"
+              className="btn w-full text-white btn-primary mt-2"
               type="submit"
               value="Update Profile"
             />

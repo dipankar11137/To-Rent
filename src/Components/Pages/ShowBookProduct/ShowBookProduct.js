@@ -6,6 +6,9 @@ const ShowBookProduct = ({ booking, handleDelete }) => {
   const handleDetails = id => {
     navigator(`/roomDetails/${id}`);
   };
+  const handlePayment = id => {
+    navigator(`/payment/${id}`);
+  };
   return (
     <tr>
       <td>
@@ -27,6 +30,7 @@ const ShowBookProduct = ({ booking, handleDelete }) => {
       <td>{booking?.flat?.size} Square Feet</td>
       <td>{booking?.flat?.rent} Taka</td>
       <td>{booking?.flat?.number}</td>
+
       <td>
         <button
           onClick={() => handleDetails(booking?.flat?._id)}
@@ -34,6 +38,18 @@ const ShowBookProduct = ({ booking, handleDelete }) => {
         >
           Details
         </button>
+      </td>
+      <td>
+        {booking.payment ? (
+          <h1 className="text-xl font-bold text-green-800">Done</h1>
+        ) : (
+          <button
+            onClick={() => handlePayment(booking?._id)}
+            className="btn btn-info btn-sm"
+          >
+            Payment
+          </button>
+        )}
       </td>
       <td>
         <button

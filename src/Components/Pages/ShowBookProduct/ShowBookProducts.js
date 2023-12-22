@@ -37,6 +37,7 @@ const ShowBookProducts = () => {
               <th>Rent</th>
               <th>Phone Number</th>
               <th>Details</th>
+              <th>Payment</th>
               <th>Delete</th>
             </tr>
           </thead>

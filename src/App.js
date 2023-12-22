@@ -11,6 +11,7 @@ import AddItems from './Components/Pages/AddItems/AddItems';
 import Home from './Components/Pages/Home/Home';
 import RoomDetails from './Components/Pages/Home/RoomDetails';
 import ManageFlats from './Components/Pages/ManageFlats/ManageFlats';
+import Payment from './Components/Pages/Payment/Payment';
 import EditProfile from './Components/Pages/Profile/EditProfile';
 import Profile from './Components/Pages/Profile/Profile';
 import ShowBookProducts from './Components/Pages/ShowBookProduct/ShowBookProducts';
@@ -48,6 +49,14 @@ function App() {
           element={
             <RequireAuth>
               <RoomDetails />
+            </RequireAuth>
+          }
+        ></Route>
+        <Route
+          path="/payment/:id"
+          element={
+            <RequireAuth>
+              <Payment />
             </RequireAuth>
           }
         ></Route>
