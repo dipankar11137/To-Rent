@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react';
-import { FaArrowLeft, FaCalendarAlt, FaCheck } from 'react-icons/fa';
+import { FaCalendarAlt, FaCheck } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IoLocationSharp } from 'react-icons/io5';
 import { useNavigate, useParams } from 'react-router-dom';
 import ImageView from '../ImageView';
+import AddReview from './Add Review/AddReview';
 import BookModal from './HappyClient/BookModal';
 
 const RoomDetails = () => {
@@ -19,8 +20,10 @@ const RoomDetails = () => {
   const handleBack = () => {
     navigate('/');
   };
+  const handleRating = () => {
+    const reating = [];
+  };
   return (
-
     <div className="md:mx-36 mt-10 bg-green-50 pb-2">
       <div className="grid grid-cols-12">
         <div className="col-span-7">
@@ -123,15 +126,25 @@ const RoomDetails = () => {
           </h1>
           <p className="pr-3">{flat?.description}</p>
         </div>
-        <div className="flex items-center justify-center">
-          <button
-            onClick={handleBack}
-            className="btn btn-primary ml-40 text-white"
-          >
+        <div className="  justify-center bg-red-400 w-[350px]">
+          <div>
+            <h1>dado</h1>
+            <div>
+              <label htmlFor="my_modal_6" className="btn">
+                open modal
+              </label>
+
+              {/* Put this part before </body> tag */}
+              <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+
+              <AddReview id={id} />
+            </div>
+          </div>
+          {/* <button onClick={handleBack} className="btn btn-primary  text-white">
             {' '}
             <FaArrowLeft className="mr-3" />
             Back to Home
-          </button>
+          </button> */}
         </div>
       </div>
       <div className="mt-10">

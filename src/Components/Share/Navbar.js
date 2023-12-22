@@ -156,7 +156,7 @@ const Navbar = () => {
             </label>
             <ul
               tabindex="0"
-              className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-40 dark:bg-gray-800 dark:border-gray-700 hover:dark:bg-purple-900"
+              className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-40 bg-gray-800 border-gray-700 hover:bg-purple-900"
             >
               <li>
                 <Link to="/addItems">Add Flats</Link>
