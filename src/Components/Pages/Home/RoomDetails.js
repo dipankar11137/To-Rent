@@ -1,20 +1,28 @@
 import React, { useEffect, useState } from 'react';
-import { FaCalendarAlt, FaCheck } from 'react-icons/fa';
+import { FaCalendarAlt, FaCheck, FaCommentAlt } from 'react-icons/fa';
 import { ImCross } from 'react-icons/im';
 import { IoLocationSharp } from 'react-icons/io5';
 import { useNavigate, useParams } from 'react-router-dom';
 import ImageView from '../ImageView';
 import AddReview from './Add Review/AddReview';
+import ShowReview from './Add Review/ShowReview';
 import BookModal from './HappyClient/BookModal';
 
 const RoomDetails = () => {
   const { id } = useParams();
   const [flat, setFlat] = useState({});
+  const [reviews, setReview] = useState([]);
+
   useEffect(() => {
     fetch(`http://localhost:5000/flat/${id}`)
       .then(res => res.json())
       .then(data => setFlat(data));
   }, [id]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/reviews`)
+      .then(res => res.json())
+      .then(data => setReview(data));
+  }, [reviews]);
 
   const navigate = useNavigate();
   const handleBack = () => {
@@ -126,18 +134,31 @@ const RoomDetails = () => {
           </h1>
           <p className="pr-3">{flat?.description}</p>
         </div>
-        <div className="  justify-center bg-red-400 w-[350px]">
+        <div className="  justify-center w-[350px]">
           <div>
-            <h1>dado</h1>
             <div>
-              <label htmlFor="my_modal_6" className="btn">
-                open modal
-              </label>
+              {reviews.map(review => (
+                <ShowReview key={review._id} review={review}></ShowReview>
+              ))}
+            </div>
+            <div className="flex justify-end mr-10">
+              <div>
+                <label
+                  htmlFor="my_modal_6"
+                  className="border-t-[2px] flex items-center gap-x-2 cursor-pointer"
+                >
+                  <FaCommentAlt /> Comment
+                </label>
 
-              {/* Put this part before </body> tag */}
-              <input type="checkbox" id="my_modal_6" className="modal-toggle" />
+                {/* Put this part before </body> tag */}
+                <input
+                  type="checkbox"
+                  id="my_modal_6"
+                  className="modal-toggle"
+                />
 
-              <AddReview id={id} />
+                <AddReview id={id} />
+              </div>
             </div>
           </div>
           {/* <button onClick={handleBack} className="btn btn-primary  text-white">

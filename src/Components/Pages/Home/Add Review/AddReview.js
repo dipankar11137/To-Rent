@@ -26,10 +26,10 @@ const AddReview = ({ id }) => {
   }
 
   const onSubmit = () => {
-    const updateReview = { review, rating, id };
+    const updateReview = { review, rating, cId: id };
     console.log(updateReview);
     toast.success('Successfully Add Review');
-    const url = `http://localhost:5000/addReview`;
+    const url = `http://localhost:5000/review`;
     fetch(url, {
       method: 'POST',
       headers: {
