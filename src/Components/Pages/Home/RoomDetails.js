@@ -145,7 +145,7 @@ const RoomDetails = () => {
             <div className="flex justify-end mr-10">
               <div>
                 <label
-                  htmlFor="my_modal_6"
+                  htmlFor="my_modal_7"
                   className="border-t-[2px] flex items-center gap-x-2 cursor-pointer"
                 >
                   <FaCommentAlt /> Comment
@@ -154,7 +154,7 @@ const RoomDetails = () => {
                 {/* Put this part before </body> tag */}
                 <input
                   type="checkbox"
-                  id="my_modal_6"
+                  id="my_modal_7"
                   className="modal-toggle"
                 />
 

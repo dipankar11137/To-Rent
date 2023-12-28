@@ -45,7 +45,7 @@ const AddReview = ({ id }) => {
       <div className="modal-box  w-96">
         <div className=" fixed modal-action -top-7 z-20 -right-0">
           <label
-            htmlFor="my_modal_6"
+            htmlFor="my_modal_7"
             className=" text-red-600  text-3xl font-extrabold px-3 py-1 rounded-full shadow-2xl cursor-pointer"
           >
             X
@@ -82,7 +82,7 @@ const AddReview = ({ id }) => {
               <div className="modal-action">
                 <label
                   onClick={onSubmit}
-                  htmlFor="my_modal_6"
+                  htmlFor="my_modal_7"
                   className="w-full btn"
                 >
                   Review
@@ -93,7 +93,7 @@ const AddReview = ({ id }) => {
                 <label
                   disabled
                   onClick={onSubmit}
-                  htmlFor="my_modal_6"
+                  htmlFor="my_modal_7"
                   className="w-full btn"
                 >
                   Review

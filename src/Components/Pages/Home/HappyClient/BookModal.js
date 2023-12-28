@@ -1,8 +1,13 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import auth from '../../../../firebase.init';
 
 const BookModal = ({ flat }) => {
+  const [user] = useAuthState(auth);
+  const email = user?.email;
+
   const {
     register,
     formState: { errors },
@@ -11,7 +16,7 @@ const BookModal = ({ flat }) => {
   } = useForm();
 
   const onSubmit = data => {
-    const updateData = { ...data, flat };
+    const updateData = { ...data, flat, email };
     fetch(`http://localhost:5000/bookFlats`, {
       method: 'POST',
       headers: {
