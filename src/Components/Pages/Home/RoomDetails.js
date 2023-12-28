@@ -23,7 +23,7 @@ const RoomDetails = () => {
     fetch(`http://localhost:5000/review/${cId}`)
       .then(res => res.json())
       .then(data => setReview(data));
-  }, [reviews]);
+  }, [reviews, cId]);
 
   const navigate = useNavigate();
   const handleBack = () => {

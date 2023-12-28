@@ -14,13 +14,29 @@ const HomePage = () => {
   const [flats, setFlats] = useState([]);
    const [searchQuery, setSearchQuery] = useState('');
    const [searchGet, setSearchGet] = useState([]);
-   console.log(searchGet);
+   const [low, setLow] = useState('');
+   const [high, setHigh] = useState('');
+
    // console.log(category);
    useEffect(() => {
      fetch(`http://localhost:5000/flats/${category}`)
        .then(res => res.json())
        .then(data => setFlats(data));
    }, [category, flats]);
+
+   // filter Rent
+   //  const originalArray = [];
+   //  for (let i = 0; i < flats.length; i++) {
+   //    originalArray.push(flats[i]?.rent);
+   //  }
+
+   //  const filteredArray = originalArray.filter(
+   //    element => element >= low && element <= high
+   //  );
+   //  console.log(filteredArray);
+
+   const handleClick = () => {};
+   //  console.log(filteredArray);
    // search
 
    const handleHome = () => {
@@ -104,59 +120,47 @@ const HomePage = () => {
              <FaHeading className="mr-3" /> Hostel
            </h1>
 
-           <h1 className="text-3xl my-3 font-bold uppercase underline text-blue-700">
+           <h1 className="text-3xl my-3 font-bold uppercase underline text-blue-700 ">
              Area
            </h1>
            <div>
              <input
-               className="w-[190px] border-2 p-2 rounded-l-lg border-blue-200"
+               className="w-[250px] border-2 p-2 rounded-lg border-blue-200 -ml-14"
                placeholder="Search Hare"
                type="search"
                value={searchQuery}
                onChange={handleSearch}
              />
            </div>
-           {/* <h1
-             onClick={() => setCategory('')}
-             className={
-               category === 'Dhaka'
-                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase  bg-white'
-                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
-             }
-           >
-             Dhaka
-           </h1>
-           <h1
-             onClick={() => setCategory('')}
-             className={
-               category === 'Barishal'
-                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase  bg-white'
-                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
-             }
-           >
-             Barishal
-           </h1>
-           <h1
-             onClick={() => setCategory('')}
-             className={
-               category === 'Khulna'
-                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase bg-white'
-                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
-             }
-           >
-             Khulna
-           </h1>
-           <h1
-             onClick={() => setCategory('')}
-             className={
-               category === 'Sylhet'
-                 ? ' text-primary  font-semibold text-xl border-r-4 border-spacing-6 border-primary cursor-pointer mt-2 uppercase bg-white'
-                 : ' font-semibold text-xl cursor-pointer mt-2 uppercase'
-             }
-           >
-             Sylhet
-           </h1> */}
+           <div className="mt-3 ml-10">
+             <h1 className="-ml-10 text-xl font-semibold">Rent</h1>
+             <div>
+               <input
+                 onChange={e => setLow(e.target.value)}
+                 className="w-[120px] border-2 p-2 rounded-lg border-blue-200 -ml-14"
+                 type="number"
+                 name="low"
+                 id=""
+                 placeholder="Low"
+               />
+             </div>
+             <h1 className="-ml-10">To</h1>
+             <div>
+               <input
+                 onChange={e => setHigh(e.target.value)}
+                 className="w-[120px] border-2 p-2 rounded-lg border-blue-200 -ml-14"
+                 type="number"
+                 name="low"
+                 id=""
+                 placeholder="High"
+               />
+             </div>
+             <button onClick={handleClick} className="btn">
+               Submit
+             </button>
+           </div>
          </div>
+
          <div className="col-span-10  w-full pl-10 mt-5">
            <div className="grid grid-cols-2 gap-10 ">
              {searchGet.length === 0
