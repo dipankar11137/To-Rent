@@ -137,16 +137,16 @@ const RoomDetails = () => {
         </div>
         <div className="  justify-center w-[350px]">
           <div>
-            <div>
+            <div className=" h-[300px] overflow-y-scroll">
               {reviews.map(review => (
                 <ShowReview key={review._id} review={review}></ShowReview>
               ))}
             </div>
-            <div className="flex justify-end mr-10">
-              <div>
+            <div className="flex justify-end mr-10 ">
+              <div className="w-full  border-t-[2px] mt-2  flex justify-end">
                 <label
                   htmlFor="my_modal_7"
-                  className="border-t-[2px] flex items-center gap-x-2 cursor-pointer"
+                  className="  flex items-center gap-x-2 cursor-pointer text-xl font-semibold"
                 >
                   <FaCommentAlt /> Comment
                 </label>
