@@ -128,7 +128,7 @@ const HomePage = () => {
           </h1>
           <div>
             <input
-              className="w-[220px] border-2 p-2 rounded-lg border-blue-200 -ml-10"
+              className="w-[195px] border-2 p-2 rounded-lg border-blue-200 "
               placeholder="Search Hare"
               type="search"
               value={searchQuery}
@@ -136,7 +136,7 @@ const HomePage = () => {
             />
           </div>
           <div>
-            <div className="ml-7">
+            <div className="">
               <div>
                 <label>
                   <h1 className="font-semibold">Lower Rent:</h1>

@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 import ManageFlat from './ManageFlat';
 
 const ManageFlats = () => {
+  const [user] = useAuthState(auth);
+  const email = user?.email;
   const [bookings, setBooking] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/flats`)
+    fetch(`http://localhost:5000/manageFlats/${email}`)
       .then(res => res.json())
       .then(data => setBooking(data));
-  }, [bookings]);
+  }, [bookings, email]);
   const handleDelete = id => {
     // console.log(id);
     const proceed = window.confirm('Are You Sure ?');

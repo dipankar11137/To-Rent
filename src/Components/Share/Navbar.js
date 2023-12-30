@@ -142,11 +142,10 @@ const Navbar = () => {
               tabindex="0"
               className="menu menu-compact dropdown-content mt-3 p-2 shadow rounded-box w-40 bg-gray-800 border-gray-700 hover:bg-purple-900"
             >
-              {user?.email === 'abc@def.com' && (
-                <li>
-                  <Link to="/addItems">Add Flats</Link>
-                </li>
-              )}
+              <li>
+                <Link to="/addItems">Add Flats</Link>
+              </li>
+
               <li>
                 <Link to="/profile">Profile</Link>
               </li>

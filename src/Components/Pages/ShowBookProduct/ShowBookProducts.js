@@ -12,7 +12,7 @@ const ShowBookProducts = () => {
     fetch(`http://localhost:5000/bookFlat/${email}`)
       .then(res => res.json())
       .then(data => setBooking(data));
-  }, [bookings]);
+  }, [bookings, email]);
   const handleDelete = id => {
     console.log(id);
     const proceed = window.confirm('Are You Sure ?');
