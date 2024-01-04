@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
+import auth from '../../../firebase.init';
 import ImageToUrl from './ImageToUrl';
 
 const AddItems = () => {
+  const [user] = useAuthState(auth);
+  const email = user?.email;
   const [category, setCategory] = useState('');
   const [bedroom, setBedroom] = useState('');
   const [bathroom, setBathroom] = useState('');
@@ -36,6 +40,7 @@ const AddItems = () => {
       balcony,
       month,
       year,
+      email,
     };
     // console.log(updateData);
     fetch(`http://localhost:5000/flats`, {
