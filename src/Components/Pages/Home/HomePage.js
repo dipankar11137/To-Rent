@@ -10,7 +10,7 @@ import { MdOutlineFamilyRestroom } from 'react-icons/md';
 import { useNavigate } from 'react-router-dom';
 import RoomCard from './RoomCard';
 
-const HomePage = ({ sideBar }) => {
+const HomePage = ({ sideBar, setSideBar }) => {
   const [category, setCategory] = useState('');
   const [flats, setFlats] = useState([]);
   const [searchQuery, setSearchQuery] = useState('');
@@ -43,7 +43,7 @@ const HomePage = ({ sideBar }) => {
   //  console.log(filteredArray);
   // search
 
-  const handleHome = ({ sideBar, setSideBar }) => {
+  const handleHome = () => {
     setCategory('');
     setSearchGet([]);
   };
@@ -81,7 +81,10 @@ const HomePage = ({ sideBar }) => {
             </p>
             <div className="flex justify-between mt-16">
               <div>
-                <button className="btn btn-secondary w-full text-white btn-sm">
+                <button
+                  onClick={() => setSideBar(true)}
+                  className="btn btn-secondary w-full text-white btn-sm"
+                >
                   Rent Flats
                 </button>
               </div>
