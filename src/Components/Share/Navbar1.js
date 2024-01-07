@@ -1,11 +1,10 @@
-import { signOut } from "firebase/auth";
-import React, { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import { FaUniversity } from 'react-icons/fa';
+import { signOut } from 'firebase/auth';
+import React, { useEffect, useState } from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { FaAlignLeft, FaTimes, FaUniversity } from 'react-icons/fa';
 import { Link, useNavigate } from 'react-router-dom';
 import auth from '../../firebase.init';
-
-const Navbar = () => {
+const Navbar1 = ({ sideBar, setSideBar }) => {
   const [user] = useAuthState(auth);
   const email = user?.email;
   const navigate = useNavigate();
@@ -57,6 +56,17 @@ const Navbar = () => {
           >
             {/* {menuItems} */}
           </ul>
+        </div>
+        <div className="ml-16 mr-5">
+          {sideBar ? (
+            <button onClick={() => setSideBar(false)}>
+              <FaTimes className="text-3xl" />
+            </button>
+          ) : (
+            <button onClick={() => setSideBar(true)}>
+              <FaAlignLeft className="text-3xl" />
+            </button>
+          )}
         </div>
         <Link
           to="/"
@@ -150,4 +160,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Navbar1;

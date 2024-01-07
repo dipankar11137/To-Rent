@@ -42,7 +42,7 @@ const HomePage = () => {
   //  console.log(filteredArray);
   // search
 
-  const handleHome = () => {
+  const handleHome = ({ sideBar, setSideBar }) => {
     setCategory('');
     setSearchGet([]);
   };

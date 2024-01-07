@@ -15,14 +15,13 @@ import Payment from './Components/Pages/Payment/Payment';
 import EditProfile from './Components/Pages/Profile/EditProfile';
 import Profile from './Components/Pages/Profile/Profile';
 import ShowBookProducts from './Components/Pages/ShowBookProduct/ShowBookProducts';
-import Navbar from './Components/Share/Navbar';
 import NotFound from './Components/Share/NotFound';
 AOS.init();
 function App() {
   return (
     <div className="bg-green-100">
       {/* <CreateAccount /> */}
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Routes>
         <Route path="/" element={<Home />}></Route>
