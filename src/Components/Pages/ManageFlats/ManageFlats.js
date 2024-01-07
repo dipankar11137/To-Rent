@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { toast } from 'react-toastify';
 import auth from '../../../firebase.init';
+import Navbar from '../../Share/Navbar';
 import ManageFlat from './ManageFlat';
 
 const ManageFlats = () => {
@@ -31,6 +32,7 @@ const ManageFlats = () => {
   };
   return (
     <div className="h-screen">
+      <Navbar />
       <div className="overflow-x-auto mx-20 mt-1 shadow-lg">
         <table className="table w-full text-center">
           {/* head */}

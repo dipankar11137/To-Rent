@@ -7,6 +7,7 @@ import {
   FaUserFriends,
 } from 'react-icons/fa';
 import { MdOutlineFamilyRestroom } from 'react-icons/md';
+import { useNavigate } from 'react-router-dom';
 import RoomCard from './RoomCard';
 
 const HomePage = ({ sideBar }) => {
@@ -60,8 +61,42 @@ const HomePage = ({ sideBar }) => {
 
     // console.log(filtered);
   };
+  const navigation = useNavigate();
+  const handleAdd = () => {
+    navigation('/addItems');
+  };
   return (
     <div className="mx-20 shadow-red-500 shadow-r-lg">
+      {!sideBar && (
+        <div className="flex justify-center">
+          <div className="w-[500px] h-[300px] border-[1px] border-dotted border-slate-400 p-4 mt-5">
+            <h1 className="text-6xl font-extrabold text-center mb-5">
+              To Rent
+            </h1>
+            <p className="text-center">
+              Discover your ideal living space effortlessly with our innovative
+              platform. From detailed property listings to immersive virtual
+              experiences, we prioritize your comfort and convenience in finding
+              your perfect home.
+            </p>
+            <div className="flex justify-between mt-16">
+              <div>
+                <button className="btn btn-secondary w-full text-white btn-sm">
+                  Rent Flats
+                </button>
+              </div>
+              <div>
+                <button
+                  onClick={handleAdd}
+                  className="btn btn-info w-full text-white btn-sm"
+                >
+                  Add Flats
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
       <div className="grid grid-cols-12">
         {sideBar && (
           <div className="col-span-2  mt-10 pr-4 border-r-2 ">
@@ -128,7 +163,7 @@ const HomePage = ({ sideBar }) => {
               <FaHeading className="mr-3" /> Hostel
             </h1>
 
-            <h1 className="text-3xl my-3 font-bold uppercase underline text-blue-700 ">
+            <h1 className="text-3xl my-3 font-bold uppercase underline text-blue-700 text-center">
               Area
             </h1>
             <div>
@@ -141,7 +176,7 @@ const HomePage = ({ sideBar }) => {
               />
             </div>
             <div>
-              <div className="">
+              <div className="mt-3">
                 <div>
                   <label>
                     <h1 className="font-semibold">Lower Rent:</h1>
@@ -156,7 +191,7 @@ const HomePage = ({ sideBar }) => {
 
                 <div>
                   <label>
-                    <h1 className="font-semibold">Upper Rent:</h1>
+                    <h1 className="font-semibold mt-3">Upper Rent:</h1>
                   </label>
 
                   <input
