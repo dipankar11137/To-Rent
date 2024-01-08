@@ -29,7 +29,7 @@ const AddReview = ({ id }) => {
     const updateReview = { review, rating, cId: id };
     console.log(updateReview);
     toast.success('Successfully Add Review');
-    const url = `http://localhost:5000/review`;
+    const url = `https://to-rent-server.onrender.com/review`;
     fetch(url, {
       method: 'POST',
       headers: {

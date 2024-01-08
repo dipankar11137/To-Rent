@@ -44,7 +44,7 @@ const AddItems = () => {
       email,
     };
     // console.log(updateData);
-    fetch(`http://localhost:5000/flats`, {
+    fetch(`https://to-rent-server.onrender.com/flats`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

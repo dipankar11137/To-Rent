@@ -10,7 +10,7 @@ const ShowBookProducts = () => {
   const email = user?.email;
   const [bookings, setBooking] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/bookFlat/${email}`)
+    fetch(`https://to-rent-server.onrender.com/bookFlat/${email}`)
       .then(res => res.json())
       .then(data => setBooking(data));
   }, [bookings, email]);
@@ -18,7 +18,7 @@ const ShowBookProducts = () => {
     console.log(id);
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/bookFlatsDelete/${id}`;
+      const url = `https://to-rent-server.onrender.com/bookFlatsDelete/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

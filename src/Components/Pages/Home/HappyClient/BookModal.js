@@ -17,7 +17,7 @@ const BookModal = ({ flat }) => {
 
   const onSubmit = data => {
     const updateData = { ...data, flat, email };
-    fetch(`http://localhost:5000/bookFlats`, {
+    fetch(`https://to-rent-server.onrender.com/bookFlats`, {
       method: 'POST',
       headers: {
         'content-type': 'application/json',

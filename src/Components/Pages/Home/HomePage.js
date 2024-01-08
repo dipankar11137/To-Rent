@@ -20,7 +20,7 @@ const HomePage = ({ sideBar, setSideBar }) => {
 
   // console.log(category);
   useEffect(() => {
-    fetch(`http://localhost:5000/flats/${category}`)
+    fetch(`https://to-rent-server.onrender.com/flats/${category}`)
       .then(res => res.json())
       .then(data => setFlats(data));
   }, [category]);

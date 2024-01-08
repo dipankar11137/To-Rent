@@ -16,12 +16,12 @@ const RoomDetails = () => {
   const cId = id;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/flat/${id}`)
+    fetch(`https://to-rent-server.onrender.com/flat/${id}`)
       .then(res => res.json())
       .then(data => setFlat(data));
   }, [id]);
   useEffect(() => {
-    fetch(`http://localhost:5000/review/${cId}`)
+    fetch(`https://to-rent-server.onrender.com/review/${cId}`)
       .then(res => res.json())
       .then(data => setReview(data));
   }, [reviews, cId]);

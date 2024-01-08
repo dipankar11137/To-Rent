@@ -15,13 +15,13 @@ const Navbar1 = ({ sideBar, setSideBar }) => {
   const [dbUser, setDbUser] = useState([]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/user/${email}`)
+    fetch(`https://to-rent-server.onrender.com/user/${email}`)
       .then(res => res.json())
       .then(data => setDbUser(data));
   }, [dbUser, email]);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/bookFlat/${email}`)
+    fetch(`https://to-rent-server.onrender.com/bookFlat/${email}`)
       .then(res => res.json())
       .then(data => setBooking(data));
   }, [booking, email]);

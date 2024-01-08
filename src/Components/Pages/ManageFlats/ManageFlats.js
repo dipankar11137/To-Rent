@@ -10,7 +10,7 @@ const ManageFlats = () => {
   const email = user?.email;
   const [bookings, setBooking] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/manageFlats/${email}`)
+    fetch(`https://to-rent-server.onrender.com/manageFlats/${email}`)
       .then(res => res.json())
       .then(data => setBooking(data));
   }, [bookings, email]);
@@ -18,7 +18,7 @@ const ManageFlats = () => {
     // console.log(id);
     const proceed = window.confirm('Are You Sure ?');
     if (proceed) {
-      const url = `http://localhost:5000/flats/${id}`;
+      const url = `https://to-rent-server.onrender.com/flats/${id}`;
       fetch(url, {
         method: 'DELETE',
       })

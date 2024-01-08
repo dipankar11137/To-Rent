@@ -7,7 +7,7 @@ const Payment = () => {
   const { id } = useParams('');
   const [buyBlood, setBuyBlood] = useState({});
   useEffect(() => {
-    fetch(`http://localhost:5000/buyBloodBuyId/${id}`)
+    fetch(`https://to-rent-server.onrender.com/buyBloodBuyId/${id}`)
       .then(res => res.json())
       .then(data => setBuyBlood(data));
   }, [buyBlood, id]);
@@ -28,7 +28,7 @@ const Payment = () => {
   };
   const handleVCode = () => {
     const updatePayment = { payment: true };
-    fetch(`http://localhost:5000/payment/${id}`, {
+    fetch(`https://to-rent-server.onrender.com/payment/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json',
