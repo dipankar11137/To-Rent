@@ -41,7 +41,7 @@ const AddReview = ({ id }) => {
       .then(result => {});
   };
   return (
-    <div className=" modal" role="dialog">
+    <div className=" modal text-black" role="dialog">
       <div className="modal-box  w-96">
         <div className=" fixed modal-action -top-7 z-20 -right-0">
           <label

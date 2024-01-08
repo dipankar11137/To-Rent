@@ -19,7 +19,7 @@ import NotFound from './Components/Share/NotFound';
 AOS.init();
 function App() {
   return (
-    <div className="bg-green-100">
+    <div className="bg-dark">
       {/* <CreateAccount /> */}
       {/* <Navbar /> */}
 

@@ -46,7 +46,7 @@ const Login = () => {
   };
 
   return (
-    <div className="flex justify-center h-screen ">
+    <div className="flex justify-center h-screen bg-slate-900">
       <div className=" pt-40">
         {/* <img className="w-11/12 rounded-xl" src={login} alt="" /> */}
       </div>

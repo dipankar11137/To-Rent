@@ -209,8 +209,18 @@ const EditProfile = () => {
                   type="text"
                   placeholder="Your Phone Number"
                   className="input input-bordered bg-white w-full  "
-                  {...register('phone', {})}
+                  {...register('phone', {
+                    pattern: {
+                      value: /^[0-9]{11}$/, // Adjust the regex pattern as needed
+                      message: 'Invalid phone number format',
+                    },
+                  })}
                 />
+                {errors.phone && (
+                  <span className="text-xs mt-2 text-red-600">
+                    {errors.phone.message}
+                  </span>
+                )}
               </div>
               <div className="form-control w-full max-w-xs">
                 <label className="label">

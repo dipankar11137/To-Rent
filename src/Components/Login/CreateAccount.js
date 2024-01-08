@@ -58,7 +58,7 @@ const CreateAccount = () => {
     navigate('/');
   };
   return (
-    <div className="flex justify-center h-screen ">
+    <div className="flex justify-center h-screen bg-slate-900">
       <div className="flex h-screen justify-center items-center  ">
         <div className="card w-96 shadow-xl bg-white -mt-32 shadow-black">
           <div className="card-body">

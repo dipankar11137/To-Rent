@@ -46,7 +46,7 @@ const Payment = () => {
     navigation('/showBookProducts');
   };
   return (
-    <div className="flex justify-center mt-5 pb-20">
+    <div className="flex justify-center pt-5 pb-20 bg-slate-900">
       <div>
         <div className="bg-pink-700 w-[500px] h-[650px]">
           <img
@@ -90,7 +90,7 @@ const Payment = () => {
               <div>
                 <input
                   className="p-1 pl-2 mt-2 text-black w-[300px] rounded-lg"
-                  placeholder="Enter Your Password"
+                  placeholder="Enter BKash PIN"
                   type="password"
                 />
                 {passwordButton && (

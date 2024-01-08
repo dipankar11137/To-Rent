@@ -66,24 +66,27 @@ const HomePage = ({ sideBar, setSideBar }) => {
     navigation('/addItems');
   };
   return (
-    <div className="mx-20 shadow-red-500 shadow-r-lg">
+    <div className=" shadow-red-500 shadow-r-lg">
       {!sideBar && (
-        <div className="flex justify-center">
-          <div className="w-[500px] h-[300px] border-[1px] border-dotted border-slate-400 p-4 mt-5">
-            <h1 className="text-6xl font-extrabold text-center mb-5">
-              To Rent
+        <div className="bg-slate-800 pb-64 ">
+          <div className="  p-4 pt-28">
+            <h1 className="text-9xl font-extrabold text-center mb-5 text-yellow-600">
+              <span className="text-white">To</span>-
+              <span className="text-yellow-600">R</span>ent
             </h1>
-            <p className="text-center">
-              Discover your ideal living space effortlessly with our innovative
-              platform. From detailed property listings to immersive virtual
-              experiences, we prioritize your comfort and convenience in finding
-              your perfect home.
-            </p>
-            <div className="flex justify-between mt-16">
+            <div className="flex justify-center">
+              <p className="text-center w-[500px] text-slate-200">
+                Discover your ideal living space effortlessly with our
+                innovative platform. From detailed property listings to
+                immersive virtual experiences, we prioritize your comfort and
+                convenience in finding your perfect home.
+              </p>
+            </div>
+            <div className="flex justify-center gap-20 mt-16">
               <div>
                 <button
                   onClick={() => setSideBar(true)}
-                  className="btn btn-secondary w-full text-white btn-sm"
+                  className="btn btn-secondary w-full text-white "
                 >
                   Rent Flats
                 </button>
@@ -91,7 +94,7 @@ const HomePage = ({ sideBar, setSideBar }) => {
               <div>
                 <button
                   onClick={handleAdd}
-                  className="btn btn-info w-full text-white btn-sm"
+                  className="btn btn-info w-full text-white "
                 >
                   Add Flats
                 </button>
@@ -100,9 +103,9 @@ const HomePage = ({ sideBar, setSideBar }) => {
           </div>
         </div>
       )}
-      <div className="grid grid-cols-12">
+      <div className="grid grid-cols-12 mx-20">
         {sideBar && (
-          <div className="col-span-2  mt-10 pr-4 border-r-2 ">
+          <div className="col-span-2 text-white  mt-10 pr-4 border-r-2 ">
             <h1
               onClick={handleHome}
               className={
@@ -171,7 +174,7 @@ const HomePage = ({ sideBar, setSideBar }) => {
             </h1>
             <div>
               <input
-                className="w-[195px] border-2 p-2 rounded-lg border-blue-200 "
+                className="w-[190px] border-2 p-2 text-black  rounded-lg border-blue-200 "
                 placeholder="Search Hare"
                 type="search"
                 value={searchQuery}
@@ -179,13 +182,13 @@ const HomePage = ({ sideBar, setSideBar }) => {
               />
             </div>
             <div>
-              <div className="mt-3">
+              <div className="mt-10">
                 <div>
                   <label>
                     <h1 className="font-semibold">Lower Rent:</h1>
                   </label>
                   <input
-                    className="w-[120px] border-2 p-2 rounded-lg border-blue-200 "
+                    className="w-[120px] border-2 p-2 text-black rounded-lg border-blue-200 "
                     type="text"
                     value={lowerPrice}
                     onChange={e => setLowerPrice(e.target.value)}
@@ -198,7 +201,7 @@ const HomePage = ({ sideBar, setSideBar }) => {
                   </label>
 
                   <input
-                    className="w-[120px] border-2 p-2 rounded-lg border-blue-200 "
+                    className="w-[120px] border-2 p-2 text-black rounded-lg border-blue-200 "
                     type="text"
                     value={upperPrice}
                     onChange={e => setUpperPrice(e.target.value)}
@@ -207,7 +210,7 @@ const HomePage = ({ sideBar, setSideBar }) => {
               </div>
 
               <button
-                className="btn mt-3 btn-sm btn-primary w-full"
+                className="btn mt-3 btn-sm btn-primary w-[120px]"
                 onClick={handleFilter}
               >
                 SUbmit

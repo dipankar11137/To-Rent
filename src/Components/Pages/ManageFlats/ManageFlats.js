@@ -31,7 +31,7 @@ const ManageFlats = () => {
     }
   };
   return (
-    <div className="h-screen">
+    <div className=" bg-slate-900 pb-[1100px]">
       <Navbar />
       <div className="overflow-x-auto mx-20 mt-1 shadow-lg">
         <table className="table w-full text-center">

@@ -39,7 +39,9 @@ const BookModal = ({ flat }) => {
             X
           </label>
         </div>
-        <h1 className="text-2xl text-center font-semibold">Book Now</h1>
+        <h1 className="text-2xl text-center font-semibold text-black">
+          Book Now
+        </h1>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="form-control w-full ">
             <label className="label">
@@ -48,7 +50,7 @@ const BookModal = ({ flat }) => {
             <input
               type="text"
               placeholder="Enter Your Name"
-              className="input input-bordered h-10 bg-white w-full "
+              className="input input-bordered h-10 bg-white text-black w-full "
               {...register('bookerName', {
                 required: {
                   value: true,
@@ -71,21 +73,23 @@ const BookModal = ({ flat }) => {
             <input
               type="phone"
               placeholder="Enter Your Phone Number"
-              className="input input-bordered h-10 bg-white w-full "
+              className="input input-bordered h-10 bg-white text-black w-full "
               {...register('bookerNumber', {
                 required: {
                   value: true,
                   message: 'Number is Required',
                 },
+                pattern: {
+                  value: /^[0-9]{11}$/, // Adjust the regex pattern as needed
+                  message: 'Invalid phone number format',
+                },
               })}
             />
-            <label className="label">
-              {errors.bookerNumber?.type === 'required' && (
-                <span className="label-text-alt text-red-500">
-                  {errors.bookerNumber.message}
-                </span>
-              )}
-            </label>
+            {errors.bookerNumber && (
+              <span className="text-xs mt-2 text-red-600">
+                {errors.bookerNumber.message}
+              </span>
+            )}
           </div>
           <div className="form-control w-full ">
             <label className="label">
@@ -94,7 +98,7 @@ const BookModal = ({ flat }) => {
             <textarea
               type="text"
               placeholder="Enter Your Address"
-              className="input input-bordered h-14 bg-white w-full  pt-1"
+              className="input input-bordered h-14 text-black bg-white w-full  pt-1"
               {...register('bookerAddress', {
                 required: {
                   value: true,

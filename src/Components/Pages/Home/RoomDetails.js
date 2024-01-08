@@ -34,11 +34,11 @@ const RoomDetails = () => {
     const reating = [];
   };
   return (
-    <div>
+    <div className="bg-slate-900">
       <Navbar />
-      <div className="md:mx-36 mt-10 bg-green-50 pb-2">
+      <div className="md:mx-36 mt-10 bg-slate-800 rounded-lg pb-2 text-white">
         <div className="grid grid-cols-12">
-          <div className="col-span-7">
+          <div className="col-span-7 ml-3">
             <ImageView flat={flat} />
           </div>
           <div className="col-span-5 ml-20 mt-10">
@@ -89,11 +89,11 @@ const RoomDetails = () => {
                 Rent : <span className="font-semibold">{flat?.rent} Taka</span>
               </p>
             </div>
-            <div className="flex justify-between pr-2 mt-10 text-lg">
+            <div className="pr-2 mt-10 text-lg mb-4">
               <h1>Contact : {flat?.number}</h1>
               <a
                 target="blank"
-                className="text-primary underline font-semibold flex items-center border-2 px-2 py-1 rounded-md hover:bg-slate-300"
+                className="text-primary underline font-semibold flex items-center border-2 px-2 py-1 rounded-md hover:bg-slate-300 w-[200px] mt-3"
                 href={flat?.location}
               >
                 <IoLocationSharp className="mr-2 animate-bounce text-lg" /> Live
@@ -110,10 +110,10 @@ const RoomDetails = () => {
               <p>Balcony : {flat?.balcony}</p>
               <a
                 target="blank"
-                className="text-green-600 underline font-semibold flex items-center border-2 px-2 py-1 rounded-md hover:bg-slate-300 w-[250px]"
+                className="text-green-600 underline font-semibold flex items-center border-2 px-2 py-1 rounded-md hover:bg-slate-300 w-[250px] mt-4"
                 href={flat?.nHospital}
               >
-                <IoLocationSharp className="mr-2 animate-bounce text-lg" />{' '}
+                <IoLocationSharp className="mr-2 animate-bounce text-lg " />{' '}
                 Nearest Hospital
               </a>
               <a
@@ -134,16 +134,15 @@ const RoomDetails = () => {
               </a>
             </div>
             <h1 className="text-3xl mt-3">
-              <span className="underline">Description</span> :{' '}
+              <span className="mb-4 font-semibold">Description</span> :{' '}
             </h1>
             <p className="pr-3">{flat?.description}</p>
           </div>
           <div className="  justify-center w-[350px]">
-            <p className="text-secondary font-semibold">
-              {' '}
-              Show Previous Review
+            <p className="text-lime-500 text-xl  font-semibold">
+              Previous Customer Review
             </p>
-            <div>
+            <div className="border-[2px] border-slate-300 ">
               <div className=" h-[300px] overflow-y-scroll">
                 {reviews.map(review => (
                   <ShowReview key={review._id} review={review}></ShowReview>
@@ -153,7 +152,7 @@ const RoomDetails = () => {
                 <div className="w-full  border-t-[2px] mt-2  flex justify-end">
                   <label
                     htmlFor="my_modal_7"
-                    className="  flex items-center gap-x-2 cursor-pointer text-xl font-semibold"
+                    className="  flex items-center gap-x-2 cursor-pointer text-xl font-semibold pr-20"
                   >
                     <FaCommentAlt /> Comment
                   </label>

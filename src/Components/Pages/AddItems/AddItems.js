@@ -58,12 +58,14 @@ const AddItems = () => {
       });
   };
   return (
-    <div>
+    <div className="bg-slate-900">
       <Navbar />
-      <div className="mx-20 pb-10">
-        <div className="mx-20 bg-blue-50 rounded-lg p-2 shadow-xl">
+      <div className="mx-20 pb-10 bg-slate-900 ">
+        <div className="mx-20 bg-slate-800 rounded-lg p-2 shadow-xl">
           {urlToImage && <ImageToUrl />}
-          <h1 className="mt-3 text-center text-3xl font-bold">Add Flats</h1>
+          <h1 className="mt-3 text-center text-3xl font-bold text-white">
+            Add Flats
+          </h1>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="md:flex  lg:gap-x-14 mt-5">
               <div className="w-[350px] ">
@@ -385,10 +387,10 @@ const AddItems = () => {
                   <option className=" text-black">6</option>
                   <option className=" text-black">7</option>
                 </select>
-                <div className="grid grid-cols-2 gap-3 mt-3 text-xl w-[400px]">
+                <div className="grid grid-cols-2 gap-3 mt-3 text-xl w-[400px] text-white">
                   <label>
                     <input
-                      className="mr-2 bg-primary"
+                      className="mr-2 bg-primary "
                       type="checkbox"
                       checked={gas}
                       onChange={() => setGas(!gas)}
@@ -429,7 +431,7 @@ const AddItems = () => {
                     <input
                       type="number"
                       placeholder="Enter Your Rent"
-                      className="input input-bordered h-10 bg-white  pt-1 w-[300px]"
+                      className="input input-bordered h-10 bg-white text-black pt-1 w-[300px]"
                       {...register('rent', {
                         required: {
                           value: true,
@@ -454,7 +456,7 @@ const AddItems = () => {
                     <input
                       type="number"
                       placeholder="Distance between 2 Building "
-                      className="input input-bordered h-10 bg-white  pt-1 w-[300px] "
+                      className="input input-bordered h-10 bg-white text-black  pt-1 w-[300px] "
                       {...register('distance', {
                         required: {
                           value: true,
@@ -473,7 +475,9 @@ const AddItems = () => {
                 </div>
               </div>
               <div className="w-[350px] ">
-                <h1 className="text-xl mb-3 font-semibold">Enter Five Image</h1>
+                <h1 className="text-xl mb-3 font-semibold text-white">
+                  Enter Five Image
+                </h1>
                 {/* Image 1 */}
                 <div className="form-control w-full ">
                   <input

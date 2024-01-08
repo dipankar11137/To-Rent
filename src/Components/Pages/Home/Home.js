@@ -8,7 +8,7 @@ import HomePage from './HomePage';
 const Home = () => {
   const [sideBar, setSideBar] = useState(false);
   return (
-    <div>
+    <div className="bg-slate-900">
       <Navbar1 sideBar={sideBar} setSideBar={setSideBar} />
       <HomePage sideBar={sideBar} setSideBar={setSideBar} />
       <HappyClient />

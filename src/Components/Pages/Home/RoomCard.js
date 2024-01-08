@@ -10,7 +10,7 @@ const RoomCard = ({ flat }) => {
     navigate(`/roomDetails/${id}`);
   };
   return (
-    <div className="card card-side bg-white shadow-xl  hover:shadow-2xl hover:shadow-red-200  pr-2 ">
+    <div className="card card-side bg-white shadow-xl  hover:shadow-lg hover:shadow-red-200  pr-2 ">
       <div className="grid grid-cols-12 ">
         <div className="col-span-7">
           <img

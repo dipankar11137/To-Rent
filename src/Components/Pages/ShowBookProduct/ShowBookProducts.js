@@ -31,7 +31,7 @@ const ShowBookProducts = () => {
     }
   };
   return (
-    <div className="h-screen">
+    <div className="pb-[1000px] bg-slate-900">
       <Navbar />
       <div className="overflow-x-auto mx-20 mt-1 shadow">
         <table className="table w-full text-center">
